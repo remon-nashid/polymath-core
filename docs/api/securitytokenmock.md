@@ -6,29 +6,29 @@ original_id: SecurityTokenMock
 
 # SecurityTokenMock.sol
 
-View Source: [contracts/mocks/SecurityTokenMock.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/mocks/SecurityTokenMock.sol)
+View Source: [contracts/mocks/SecurityTokenMock.sol](../../contracts/mocks/SecurityTokenMock.sol)
 
-**↗ Extends:** [**SecurityToken**](securitytoken.md)
+**↗ Extends: [SecurityToken](SecurityToken.md)**
 
 **SecurityTokenMock**
 
 ## Functions
 
-* [initialize\(address \_getterDelegate\)](securitytokenmock.md#initialize)
+- [initialize(address _getterDelegate)](#initialize)
 
 ### initialize
 
-⤾ overrides [SecurityToken.initialize](securitytoken.md#initialize)
+⤾ overrides [SecurityToken.initialize](SecurityToken.md#initialize)
 
 Initialization function
 
-```javascript
+```js
 function initialize(address _getterDelegate) public nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_getterDelegate | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _getterDelegate | address |  | 
 

@@ -6,72 +6,72 @@ original_id: Migrations
 
 # Migrations.sol
 
-View Source: [contracts/Migrations.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/Migrations.sol)
+View Source: [contracts/Migrations.sol](../../contracts/Migrations.sol)
 
 **Migrations**
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 address public owner;
 uint256 public lastCompletedMigration;
+
 ```
 
 ## Modifiers
 
-* [restricted](migrations.md#restricted)
+- [restricted](#restricted)
 
 ### restricted
 
-```javascript
+```js
 modifier restricted() internal
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ## Functions
 
-* [\(\)](migrations.md)
-* [setCompleted\(uint256 \_completed\)](migrations.md#setcompleted)
-* [upgrade\(address \_newAddress\)](migrations.md#upgrade)
+- [()](#)
+- [setCompleted(uint256 _completed)](#setcompleted)
+- [upgrade(address _newAddress)](#upgrade)
 
-```javascript
+### 
+
+```js
 function () public nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### setCompleted
 
-```javascript
-function setCompleted(uint256 _completed) public nonpayable restricted
+```js
+function setCompleted(uint256 _completed) public nonpayable restricted 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_completed | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _completed | uint256 |  | 
 
 ### upgrade
 
-```javascript
-function upgrade(address _newAddress) public nonpayable restricted
+```js
+function upgrade(address _newAddress) public nonpayable restricted 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_newAddress | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _newAddress | address |  | 
 

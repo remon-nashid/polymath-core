@@ -4,21 +4,20 @@ title: DividendCheckpointStorage
 original_id: DividendCheckpointStorage
 ---
 
-# Holds the storage variable for the DividendCheckpoint modules \(i.e ERC20, Ether\) \(DividendCheckpoint
+# Holds the storage variable for the DividendCheckpoint modules (i.e ERC20, Ether) (DividendCheckpointStorage.sol)
 
-View Source: [contracts/storage/modules/Checkpoint/Dividend/DividendCheckpointStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/storage/modules/Checkpoint/Dividend/DividendCheckpointStorage.sol)
+View Source: [contracts/storage/modules/Checkpoint/Dividend/DividendCheckpointStorage.sol](../../contracts/storage/modules/Checkpoint/Dividend/DividendCheckpointStorage.sol)
 
-**↘ Derived Contracts:** [**DividendCheckpoint**](dividendcheckpoint.md)**,** [**ERC20DividendCheckpointProxy**](erc20dividendcheckpointproxy.md)**,** [**EtherDividendCheckpointProxy**](etherdividendcheckpointproxy.md)
+**↘ Derived Contracts: [DividendCheckpoint](DividendCheckpoint.md), [ERC20DividendCheckpointProxy](ERC20DividendCheckpointProxy.md), [EtherDividendCheckpointProxy](EtherDividendCheckpointProxy.md)**
 
 **DividendCheckpointStorage**
 
 abstract contract
 
 ## Structs
-
 ### Dividend
 
-```javascript
+```js
 struct Dividend {
  uint256 checkpointId,
  uint256 created,
@@ -38,16 +37,16 @@ struct Dividend {
 ```
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 address payable public wallet;
 uint256 public EXCLUDED_ADDRESS_LIMIT;
 struct DividendCheckpointStorage.Dividend[] public dividends;
 address[] public excluded;
 mapping(address => uint256) public withholdingTax;
 mapping(address => uint256) public investorWithheld;
+
 ```
 
 ## Functions

@@ -6,66 +6,65 @@ original_id: OZStorage
 
 # OZStorage.sol
 
-View Source: [contracts/tokens/OZStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/tokens/OZStorage.sol)
+View Source: [contracts/tokens/OZStorage.sol](../../contracts/tokens/OZStorage.sol)
 
-**↘ Derived Contracts:** [**SecurityTokenProxy**](securitytokenproxy.md)**,** [**STGetter**](stgetter.md)
+**↘ Derived Contracts: [SecurityTokenProxy](SecurityTokenProxy.md), [STGetter](STGetter.md)**
 
 **OZStorage**
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 mapping(address => uint256) private _balances;
 mapping(address => mapping(address => uint256)) private _allowed;
 uint256 private _totalSupply;
 uint256 private _guardCounter;
+
 ```
 
 ## Functions
 
-* [totalSupply\(\)](ozstorage.md#totalsupply)
-* [balanceOf\(address \_investor\)](ozstorage.md#balanceof)
-* [\_allowance\(address owner, address spender\)](ozstorage.md#_allowance)
+- [totalSupply()](#totalsupply)
+- [balanceOf(address _investor)](#balanceof)
+- [_allowance(address owner, address spender)](#_allowance)
 
 ### totalSupply
 
-```javascript
+```js
 function totalSupply() internal view
 returns(uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### balanceOf
 
-```javascript
+```js
 function balanceOf(address _investor) internal view
 returns(uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_investor | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _investor | address |  | 
 
-### \_allowance
+### _allowance
 
-```javascript
+```js
 function _allowance(address owner, address spender) internal view
 returns(uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| owner | address |  |
-| spender | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| owner | address |  | 
+| spender | address |  | 
 

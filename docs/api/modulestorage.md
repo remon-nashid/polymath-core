@@ -4,21 +4,20 @@ title: ModuleStorage
 original_id: ModuleStorage
 ---
 
-# Storage for Module contract \(ModuleStorage.sol\)
+# Storage for Module contract (ModuleStorage.sol)
 
-View Source: [contracts/storage/modules/ModuleStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/storage/modules/ModuleStorage.sol)
+View Source: [contracts/storage/modules/ModuleStorage.sol](../../contracts/storage/modules/ModuleStorage.sol)
 
-**↘ Derived Contracts:** [**BlacklistTransferManagerProxy**](blacklisttransfermanagerproxy.md)**,** [**CappedSTOProxy**](cappedstoproxy.md)**,** [**CountTransferManagerProxy**](counttransfermanagerproxy.md)**,** [**DummySTOProxy**](dummystoproxy.md)**,** [**ERC20DividendCheckpointProxy**](erc20dividendcheckpointproxy.md)**,** [**EtherDividendCheckpointProxy**](etherdividendcheckpointproxy.md)**,** [**GeneralPermissionManagerProxy**](generalpermissionmanagerproxy.md)**,** [**GeneralTransferManagerProxy**](generaltransfermanagerproxy.md)**,** [**LockUpTransferManagerProxy**](lockuptransfermanagerproxy.md)**,** [**ManualApprovalTransferManagerProxy**](manualapprovaltransfermanagerproxy.md)**,** [**Module**](module.md)**,** [**PercentageTransferManagerProxy**](percentagetransfermanagerproxy.md)**,** [**PLCRVotingCheckpointProxy**](plcrvotingcheckpointproxy.md)**,** [**PreSaleSTOProxy**](presalestoproxy.md)**,** [**USDTieredSTOProxy**](usdtieredstoproxy.md)**,** [**VestingEscrowWalletProxy**](vestingescrowwalletproxy.md)**,** [**VolumeRestrictionTMProxy**](volumerestrictiontmproxy.md)**,** [**WeightedVoteCheckpointProxy**](weightedvotecheckpointproxy.md)
+**↘ Derived Contracts: [BlacklistTransferManagerProxy](BlacklistTransferManagerProxy.md), [CappedSTOProxy](CappedSTOProxy.md), [CountTransferManagerProxy](CountTransferManagerProxy.md), [DummySTOProxy](DummySTOProxy.md), [ERC20DividendCheckpointProxy](ERC20DividendCheckpointProxy.md), [EtherDividendCheckpointProxy](EtherDividendCheckpointProxy.md), [GeneralPermissionManagerProxy](GeneralPermissionManagerProxy.md), [GeneralTransferManagerProxy](GeneralTransferManagerProxy.md), [LockUpTransferManagerProxy](LockUpTransferManagerProxy.md), [ManualApprovalTransferManagerProxy](ManualApprovalTransferManagerProxy.md), [Module](Module.md), [PercentageTransferManagerProxy](PercentageTransferManagerProxy.md), [PLCRVotingCheckpointProxy](PLCRVotingCheckpointProxy.md), [PreSaleSTOProxy](PreSaleSTOProxy.md), [USDTieredSTOProxy](USDTieredSTOProxy.md), [VestingEscrowWalletProxy](VestingEscrowWalletProxy.md), [VolumeRestrictionTMProxy](VolumeRestrictionTMProxy.md), [WeightedVoteCheckpointProxy](WeightedVoteCheckpointProxy.md)**
 
 **ModuleStorage**
 
 Contract is abstract
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 //public members
 address public factory;
 contract ISecurityToken public securityToken;
@@ -28,22 +27,25 @@ contract IERC20 public polyToken;
 
 //internal members
 bytes32 internal constant TREASURY;
+
 ```
 
 ## Functions
 
-* [\(address \_securityToken, address \_polyAddress\)](modulestorage.md)
+- [(address _securityToken, address _polyAddress)](#)
+
+### 
 
 Constructor
 
-```javascript
+```js
 function (address _securityToken, address _polyAddress) public nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_securityToken | address | Address of the security token |
-| \_polyAddress | address | Address of the polytoken |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _securityToken | address | Address of the security token | 
+| _polyAddress | address | Address of the polytoken | 
 

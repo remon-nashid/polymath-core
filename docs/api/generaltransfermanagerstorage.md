@@ -4,19 +4,18 @@ title: GeneralTransferManagerStorage
 original_id: GeneralTransferManagerStorage
 ---
 
-# Transfer Manager module for core transfer validation functionality \(GeneralTransferManagerStorage.so
+# Transfer Manager module for core transfer validation functionality (GeneralTransferManagerStorage.sol)
 
-View Source: [contracts/modules/TransferManager/GTM/GeneralTransferManagerStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/modules/TransferManager/GTM/GeneralTransferManagerStorage.sol)
+View Source: [contracts/modules/TransferManager/GTM/GeneralTransferManagerStorage.sol](../../contracts/modules/TransferManager/GTM/GeneralTransferManagerStorage.sol)
 
-**↘ Derived Contracts:** [**GeneralTransferManager**](generaltransfermanager.md)**,** [**GeneralTransferManagerProxy**](generaltransfermanagerproxy.md)
+**↘ Derived Contracts: [GeneralTransferManager](GeneralTransferManager.md), [GeneralTransferManagerProxy](GeneralTransferManagerProxy.md)**
 
 **GeneralTransferManagerStorage**
 
 **Enums**
-
 ### TransferType
 
-```javascript
+```js
 enum TransferType {
  GENERAL,
  ISSUANCE,
@@ -25,10 +24,9 @@ enum TransferType {
 ```
 
 ## Structs
-
 ### Defaults
 
-```javascript
+```js
 struct Defaults {
  uint64 canSendAfter,
  uint64 canReceiveAfter
@@ -37,7 +35,7 @@ struct Defaults {
 
 ### TransferRequirements
 
-```javascript
+```js
 struct TransferRequirements {
  bool fromValidKYC,
  bool toValidKYC,
@@ -47,10 +45,9 @@ struct TransferRequirements {
 ```
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 //public members
 bytes32 public constant WHITELIST;
 bytes32 public constant INVESTORSKEY;
@@ -62,6 +59,7 @@ mapping(uint8 => struct GeneralTransferManagerStorage.TransferRequirements) publ
 
 //internal members
 uint256 internal constant ONE;
+
 ```
 
 ## Functions

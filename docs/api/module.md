@@ -4,11 +4,12 @@ title: Module
 original_id: Module
 ---
 
-# Interface that any module contract should implement \(Module.sol\)
+# Interface that any module contract should implement (Module.sol)
 
-View Source: [contracts/modules/Module.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/modules/Module.sol)
+View Source: [contracts/modules/Module.sol](../../contracts/modules/Module.sol)
 
-**↗ Extends:** [**IModule**](imodule.md)**,** [**ModuleStorage**](modulestorage.md)**,** [**Pausable**](pausable.md) **↘ Derived Contracts:** [**DividendCheckpoint**](dividendcheckpoint.md)**,** [**GeneralPermissionManager**](generalpermissionmanager.md)**,** [**STO**](sto.md)**,** [**TrackedRedemption**](trackedredemption.md)**,** [**TransferManager**](transfermanager.md)**,** [**VotingCheckpoint**](votingcheckpoint.md)**,** [**Wallet**](wallet.md)
+**↗ Extends: [IModule](IModule.md), [ModuleStorage](ModuleStorage.md), [Pausable](Pausable.md)**
+**↘ Derived Contracts: [DividendCheckpoint](DividendCheckpoint.md), [GeneralPermissionManager](GeneralPermissionManager.md), [STO](STO.md), [TrackedRedemption](TrackedRedemption.md), [TransferManager](TransferManager.md), [VotingCheckpoint](VotingCheckpoint.md), [Wallet](Wallet.md)**
 
 **Module**
 
@@ -16,155 +17,151 @@ Contract is abstract
 
 ## Modifiers
 
-* [withPerm](module.md#withperm)
-* [onlyFactory](module.md#onlyfactory)
+- [withPerm](#withperm)
+- [onlyFactory](#onlyfactory)
 
 ### withPerm
 
-```javascript
+```js
 modifier withPerm(bytes32 _perm) internal
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_perm | bytes32 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _perm | bytes32 |  | 
 
 ### onlyFactory
 
-```javascript
+```js
 modifier onlyFactory() internal
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ## Functions
 
-* [\(address \_securityToken, address \_polyAddress\)](module.md)
-* [\_checkPerm\(bytes32 \_perm, address \_caller\)](module.md#_checkperm)
-* [\_onlySecurityTokenOwner\(\)](module.md#_onlysecuritytokenowner)
-* [pause\(\)](module.md#pause)
-* [unpause\(\)](module.md#unpause)
-* [getDataStore\(\)](module.md#getdatastore)
-* [reclaimERC20\(address \_tokenContract\)](module.md#reclaimerc20)
-* [reclaimETH\(\)](module.md#reclaimeth)
+- [(address _securityToken, address _polyAddress)](#)
+- [_checkPerm(bytes32 _perm, address _caller)](#_checkperm)
+- [_onlySecurityTokenOwner()](#_onlysecuritytokenowner)
+- [pause()](#pause)
+- [unpause()](#unpause)
+- [getDataStore()](#getdatastore)
+- [reclaimERC20(address _tokenContract)](#reclaimerc20)
+- [reclaimETH()](#reclaimeth)
+
+### 
 
 Constructor
 
-```javascript
-function (address _securityToken, address _polyAddress) public nonpayable ModuleStorage
+```js
+function (address _securityToken, address _polyAddress) public nonpayable ModuleStorage 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_securityToken | address | Address of the security token |
-| \_polyAddress | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _securityToken | address | Address of the security token | 
+| _polyAddress | address |  | 
 
-### \_checkPerm
+### _checkPerm
 
-```javascript
+```js
 function _checkPerm(bytes32 _perm, address _caller) internal view
 returns(bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_perm | bytes32 |  |
-| \_caller | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _perm | bytes32 |  | 
+| _caller | address |  | 
 
-### \_onlySecurityTokenOwner
+### _onlySecurityTokenOwner
 
-```javascript
+```js
 function _onlySecurityTokenOwner() internal view
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### pause
 
-⤾ overrides [ISTO.pause](isto.md#pause)
+⤾ overrides [ISTO.pause](ISTO.md#pause)
 
-⤿ Overridden Implementation\(s\): [STO.pause](sto.md#pause)
+⤿ Overridden Implementation(s): [STO.pause](STO.md#pause)
 
-Pause \(overridden function\)
+Pause (overridden function)
 
-```javascript
+```js
 function pause() public nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### unpause
 
-Unpause \(overridden function\)
+Unpause (overridden function)
 
-```javascript
+```js
 function unpause() public nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getDataStore
 
 used to return the data store address of securityToken
 
-```javascript
+```js
 function getDataStore() public view
 returns(contract IDataStore)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### reclaimERC20
 
 Reclaims ERC20Basic compatible tokens
 
-```javascript
+```js
 function reclaimERC20(address _tokenContract) external nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_tokenContract | address | The address of the token contract |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenContract | address | The address of the token contract | 
 
 ### reclaimETH
 
 Reclaims ETH
 
-```javascript
+```js
 function reclaimETH() external nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 

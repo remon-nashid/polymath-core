@@ -4,19 +4,18 @@ title: ManualApprovalTransferManagerStorage
 original_id: ManualApprovalTransferManagerStorage
 ---
 
-# Contract used to store layout for the ManualApprovalTransferManager storage \(ManualApprovalTransferM
+# Contract used to store layout for the ManualApprovalTransferManager storage (ManualApprovalTransferManagerStorage.sol)
 
-View Source: [contracts/modules/TransferManager/MATM/ManualApprovalTransferManagerStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/modules/TransferManager/MATM/ManualApprovalTransferManagerStorage.sol)
+View Source: [contracts/modules/TransferManager/MATM/ManualApprovalTransferManagerStorage.sol](../../contracts/modules/TransferManager/MATM/ManualApprovalTransferManagerStorage.sol)
 
-**↘ Derived Contracts:** [**ManualApprovalTransferManager**](manualapprovaltransfermanager.md)**,** [**ManualApprovalTransferManagerProxy**](manualapprovaltransfermanagerproxy.md)
+**↘ Derived Contracts: [ManualApprovalTransferManager](ManualApprovalTransferManager.md), [ManualApprovalTransferManagerProxy](ManualApprovalTransferManagerProxy.md)**
 
 **ManualApprovalTransferManagerStorage**
 
 ## Structs
-
 ### ManualApproval
 
-```javascript
+```js
 struct ManualApproval {
  address from,
  address to,
@@ -28,12 +27,12 @@ struct ManualApproval {
 ```
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 mapping(address => mapping(address => uint256)) public approvalIndex;
 struct ManualApprovalTransferManagerStorage.ManualApproval[] public approvals;
+
 ```
 
 ## Functions

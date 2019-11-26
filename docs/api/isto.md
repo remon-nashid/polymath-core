@@ -4,19 +4,18 @@ title: ISTO
 original_id: ISTO
 ---
 
-# Interface to be implemented by all STO modules \(ISTO.sol\)
+# Interface to be implemented by all STO modules (ISTO.sol)
 
-View Source: [contracts/interfaces/ISTO.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/interfaces/ISTO.sol)
+View Source: [contracts/interfaces/ISTO.sol](../../contracts/interfaces/ISTO.sol)
 
-**↘ Derived Contracts:** [**STO**](sto.md)
+**↘ Derived Contracts: [STO](STO.md)**
 
 **ISTO**
 
 **Enums**
-
 ### FundRaiseType
 
-```javascript
+```js
 enum FundRaiseType {
  ETH,
  POLY,
@@ -26,63 +25,61 @@ enum FundRaiseType {
 
 **Events**
 
-```javascript
+```js
 event SetFundRaiseTypes(enum ISTO.FundRaiseType[]  _fundRaiseTypes);
 ```
 
 ## Functions
 
-* [getTokensSold\(\)](isto.md#gettokenssold)
-* [getRaised\(enum ISTO.FundRaiseType \_fundRaiseType\)](isto.md#getraised)
-* [pause\(\)](isto.md#pause)
+- [getTokensSold()](#gettokenssold)
+- [getRaised(enum ISTO.FundRaiseType _fundRaiseType)](#getraised)
+- [pause()](#pause)
 
 ### getTokensSold
 
-⤿ Overridden Implementation\(s\): [CappedSTO.getTokensSold](cappedsto.md#gettokenssold),[DummySTO.getTokensSold](dummysto.md#gettokenssold),[PreSaleSTO.getTokensSold](presalesto.md#gettokenssold),[STO.getTokensSold](sto.md#gettokenssold),[USDTieredSTO.getTokensSold](usdtieredsto.md#gettokenssold)
+⤿ Overridden Implementation(s): [CappedSTO.getTokensSold](CappedSTO.md#gettokenssold),[DummySTO.getTokensSold](DummySTO.md#gettokenssold),[PreSaleSTO.getTokensSold](PreSaleSTO.md#gettokenssold),[STO.getTokensSold](STO.md#gettokenssold),[USDTieredSTO.getTokensSold](USDTieredSTO.md#gettokenssold)
 
 Returns the total no. of tokens sold
 
-```javascript
+```js
 function getTokensSold() external view
 returns(soldTokens uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getRaised
 
-⤿ Overridden Implementation\(s\): [STO.getRaised](sto.md#getraised)
+⤿ Overridden Implementation(s): [STO.getRaised](STO.md#getraised)
 
 Returns funds raised by the STO
 
-```javascript
+```js
 function getRaised(enum ISTO.FundRaiseType _fundRaiseType) external view
 returns(raisedAmount uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_fundRaiseType | enum ISTO.FundRaiseType |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _fundRaiseType | enum ISTO.FundRaiseType |  | 
 
 ### pause
 
-⤿ Overridden Implementation\(s\): [Module.pause](module.md#pause),[STO.pause](sto.md#pause)
+⤿ Overridden Implementation(s): [Module.pause](Module.md#pause),[STO.pause](STO.md#pause)
 
-Pause \(overridden function\)
+Pause (overridden function)
 
-```javascript
+```js
 function pause() external nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 

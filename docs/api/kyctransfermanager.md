@@ -4,174 +4,174 @@ title: KYCTransferManager
 original_id: KYCTransferManager
 ---
 
-# Transfer Manager module for core transfer validation functionality \(KYCTransferManager.sol\)
+# Transfer Manager module for core transfer validation functionality (KYCTransferManager.sol)
 
-View Source: [contracts/modules/Experimental/TransferManager/KYCTransferManager.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/modules/Experimental/TransferManager/KYCTransferManager.sol)
+View Source: [contracts/modules/Experimental/TransferManager/KYCTransferManager.sol](../../contracts/modules/Experimental/TransferManager/KYCTransferManager.sol)
 
-**↗ Extends:** [**TransferManager**](transfermanager.md)
+**↗ Extends: [TransferManager](TransferManager.md)**
 
 **KYCTransferManager**
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 bytes32 public constant KYC_NUMBER;
 bytes32 public constant KYC_ARRAY;
+
 ```
 
 ## Functions
 
-* [\(address \_securityToken, address \_polyAddress\)](kyctransfermanager.md)
-* [getInitFunction\(\)](kyctransfermanager.md#getinitfunction)
-* [executeTransfer\(address \_from, address \_to, uint256 \_amount, bytes \_data\)](kyctransfermanager.md#executetransfer)
-* [verifyTransfer\(address , address \_to, uint256 , bytes \)](kyctransfermanager.md#verifytransfer)
-* [modifyKYC\(address \_investor, bool \_kycStatus\)](kyctransfermanager.md#modifykyc)
-* [\_modifyKYC\(address \_investor, bool \_kycStatus\)](kyctransfermanager.md#_modifykyc)
-* [getKYCAddresses\(\)](kyctransfermanager.md#getkycaddresses)
-* [checkKYC\(address \_investor\)](kyctransfermanager.md#checkkyc)
-* [\_getKYCKey\(address \_identity\)](kyctransfermanager.md#_getkyckey)
-* [getPermissions\(\)](kyctransfermanager.md#getpermissions)
+- [(address _securityToken, address _polyAddress)](#)
+- [getInitFunction()](#getinitfunction)
+- [executeTransfer(address _from, address _to, uint256 _amount, bytes _data)](#executetransfer)
+- [verifyTransfer(address , address _to, uint256 , bytes )](#verifytransfer)
+- [modifyKYC(address _investor, bool _kycStatus)](#modifykyc)
+- [_modifyKYC(address _investor, bool _kycStatus)](#_modifykyc)
+- [getKYCAddresses()](#getkycaddresses)
+- [checkKYC(address _investor)](#checkkyc)
+- [_getKYCKey(address _identity)](#_getkyckey)
+- [getPermissions()](#getpermissions)
+
+### 
 
 Constructor
 
-```javascript
-function (address _securityToken, address _polyAddress) public nonpayable Module
+```js
+function (address _securityToken, address _polyAddress) public nonpayable Module 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_securityToken | address | Address of the security token |
-| \_polyAddress | address | Address of the polytoken |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _securityToken | address | Address of the security token | 
+| _polyAddress | address | Address of the polytoken | 
 
 ### getInitFunction
 
-⤾ overrides [IModule.getInitFunction](imodule.md#getinitfunction)
+⤾ overrides [IModule.getInitFunction](IModule.md#getinitfunction)
 
 This function returns the signature of configure function
 
-```javascript
+```js
 function getInitFunction() public pure
 returns(bytes4)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### executeTransfer
 
-⤾ overrides [ITransferManager.executeTransfer](itransfermanager.md#executetransfer)
+⤾ overrides [ITransferManager.executeTransfer](ITransferManager.md#executetransfer)
 
-```javascript
+```js
 function executeTransfer(address _from, address _to, uint256 _amount, bytes _data) external nonpayable
 returns(enum ITransferManager.Result)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_from | address |  |
-| \_to | address |  |
-| \_amount | uint256 |  |
-| \_data | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _from | address |  | 
+| _to | address |  | 
+| _amount | uint256 |  | 
+| _data | bytes |  | 
 
 ### verifyTransfer
 
-⤾ overrides [ITransferManager.verifyTransfer](itransfermanager.md#verifytransfer)
+⤾ overrides [ITransferManager.verifyTransfer](ITransferManager.md#verifytransfer)
 
-```javascript
+```js
 function verifyTransfer(address , address _to, uint256 , bytes ) public view
 returns(enum ITransferManager.Result, bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-|  | address |  |
-| \_to | address |  |
-|  | uint256 |  |
-|  | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | address |  | 
+| _to | address |  | 
+|  | uint256 |  | 
+|  | bytes |  | 
 
 ### modifyKYC
 
-```javascript
-function modifyKYC(address _investor, bool _kycStatus) public nonpayable withPerm
+```js
+function modifyKYC(address _investor, bool _kycStatus) public nonpayable withPerm 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_investor | address |  |
-| \_kycStatus | bool |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _investor | address |  | 
+| _kycStatus | bool |  | 
 
-### \_modifyKYC
+### _modifyKYC
 
-```javascript
+```js
 function _modifyKYC(address _investor, bool _kycStatus) internal nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_investor | address |  |
-| \_kycStatus | bool |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _investor | address |  | 
+| _kycStatus | bool |  | 
 
 ### getKYCAddresses
 
-```javascript
+```js
 function getKYCAddresses() public view
 returns(address[])
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### checkKYC
 
-```javascript
+```js
 function checkKYC(address _investor) public view
 returns(kyc bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_investor | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _investor | address |  | 
 
-### \_getKYCKey
+### _getKYCKey
 
-```javascript
+```js
 function _getKYCKey(address _identity) internal pure
 returns(bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_identity | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _identity | address |  | 
 
 ### getPermissions
 
-⤾ overrides [IModule.getPermissions](imodule.md#getpermissions)
+⤾ overrides [IModule.getPermissions](IModule.md#getpermissions)
 
 Return the permissions flag that are associated with this module
 
-```javascript
+```js
 function getPermissions() public view
 returns(bytes32[])
 ```
@@ -182,7 +182,6 @@ bytes32 array
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 

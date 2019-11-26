@@ -4,19 +4,18 @@ title: STOStorage
 original_id: STOStorage
 ---
 
-# Storage layout for the STO contract \(STOStorage.sol\)
+# Storage layout for the STO contract (STOStorage.sol)
 
-View Source: [contracts/storage/modules/STO/STOStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/storage/modules/STO/STOStorage.sol)
+View Source: [contracts/storage/modules/STO/STOStorage.sol](../../contracts/storage/modules/STO/STOStorage.sol)
 
-**↘ Derived Contracts:** [**CappedSTOProxy**](cappedstoproxy.md)**,** [**DummySTOProxy**](dummystoproxy.md)**,** [**PreSaleSTOProxy**](presalestoproxy.md)**,** [**STO**](sto.md)**,** [**USDTieredSTOProxy**](usdtieredstoproxy.md)
+**↘ Derived Contracts: [CappedSTOProxy](CappedSTOProxy.md), [DummySTOProxy](DummySTOProxy.md), [PreSaleSTOProxy](PreSaleSTOProxy.md), [STO](STO.md), [USDTieredSTOProxy](USDTieredSTOProxy.md)**
 
 **STOStorage**
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 //internal members
 bytes32 internal constant INVESTORFLAGS;
 
@@ -29,6 +28,7 @@ uint256 public pausedTime;
 uint256 public investorCount;
 address payable public wallet;
 uint256 public totalTokensSold;
+
 ```
 
 ## Functions

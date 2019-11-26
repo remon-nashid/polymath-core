@@ -4,19 +4,18 @@ title: ITransferManager
 original_id: ITransferManager
 ---
 
-# Interface to be implemented by all Transfer Manager modules \(ITransferManager.sol\)
+# Interface to be implemented by all Transfer Manager modules (ITransferManager.sol)
 
-View Source: [contracts/interfaces/ITransferManager.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/interfaces/ITransferManager.sol)
+View Source: [contracts/interfaces/ITransferManager.sol](../../contracts/interfaces/ITransferManager.sol)
 
-**↘ Derived Contracts:** [**TransferManager**](transfermanager.md)
+**↘ Derived Contracts: [TransferManager](TransferManager.md)**
 
 **ITransferManager**
 
 **Enums**
-
 ### Result
 
-```javascript
+```js
 enum Result {
  INVALID,
  NA,
@@ -27,64 +26,64 @@ enum Result {
 
 ## Functions
 
-* [executeTransfer\(address \_from, address \_to, uint256 \_amount, bytes \_data\)](itransfermanager.md#executetransfer)
-* [verifyTransfer\(address \_from, address \_to, uint256 \_amount, bytes \_data\)](itransfermanager.md#verifytransfer)
-* [getTokensByPartition\(bytes32 \_partition, address \_tokenHolder, uint256 \_additionalBalance\)](itransfermanager.md#gettokensbypartition)
+- [executeTransfer(address _from, address _to, uint256 _amount, bytes _data)](#executetransfer)
+- [verifyTransfer(address _from, address _to, uint256 _amount, bytes _data)](#verifytransfer)
+- [getTokensByPartition(bytes32 _partition, address _tokenHolder, uint256 _additionalBalance)](#gettokensbypartition)
 
 ### executeTransfer
 
-⤿ Overridden Implementation\(s\): [BlacklistTransferManager.executeTransfer](blacklisttransfermanager.md#executetransfer),[CountTransferManager.executeTransfer](counttransfermanager.md#executetransfer),[GeneralTransferManager.executeTransfer](generaltransfermanager.md#executetransfer),[KYCTransferManager.executeTransfer](kyctransfermanager.md#executetransfer),[LockUpTransferManager.executeTransfer](lockuptransfermanager.md#executetransfer),[ManualApprovalTransferManager.executeTransfer](manualapprovaltransfermanager.md#executetransfer),[PercentageTransferManager.executeTransfer](percentagetransfermanager.md#executetransfer),[ScheduledCheckpoint.executeTransfer](scheduledcheckpoint.md#executetransfer),[SignedTransferManager.executeTransfer](signedtransfermanager.md#executetransfer),[VolumeRestrictionTM.executeTransfer](volumerestrictiontm.md#executetransfer)
+⤿ Overridden Implementation(s): [BlacklistTransferManager.executeTransfer](BlacklistTransferManager.md#executetransfer),[CountTransferManager.executeTransfer](CountTransferManager.md#executetransfer),[GeneralTransferManager.executeTransfer](GeneralTransferManager.md#executetransfer),[KYCTransferManager.executeTransfer](KYCTransferManager.md#executetransfer),[LockUpTransferManager.executeTransfer](LockUpTransferManager.md#executetransfer),[ManualApprovalTransferManager.executeTransfer](ManualApprovalTransferManager.md#executetransfer),[PercentageTransferManager.executeTransfer](PercentageTransferManager.md#executetransfer),[ScheduledCheckpoint.executeTransfer](ScheduledCheckpoint.md#executetransfer),[SignedTransferManager.executeTransfer](SignedTransferManager.md#executetransfer),[VolumeRestrictionTM.executeTransfer](VolumeRestrictionTM.md#executetransfer)
 
 Determines if the transfer between these two accounts can happen
 
-```javascript
+```js
 function executeTransfer(address _from, address _to, uint256 _amount, bytes _data) external nonpayable
 returns(result enum ITransferManager.Result)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_from | address |  |
-| \_to | address |  |
-| \_amount | uint256 |  |
-| \_data | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _from | address |  | 
+| _to | address |  | 
+| _amount | uint256 |  | 
+| _data | bytes |  | 
 
 ### verifyTransfer
 
-⤿ Overridden Implementation\(s\): [BlacklistTransferManager.verifyTransfer](blacklisttransfermanager.md#verifytransfer),[CountTransferManager.verifyTransfer](counttransfermanager.md#verifytransfer),[GeneralTransferManager.verifyTransfer](generaltransfermanager.md#verifytransfer),[KYCTransferManager.verifyTransfer](kyctransfermanager.md#verifytransfer),[LockUpTransferManager.verifyTransfer](lockuptransfermanager.md#verifytransfer),[ManualApprovalTransferManager.verifyTransfer](manualapprovaltransfermanager.md#verifytransfer),[PercentageTransferManager.verifyTransfer](percentagetransfermanager.md#verifytransfer),[ScheduledCheckpoint.verifyTransfer](scheduledcheckpoint.md#verifytransfer),[SignedTransferManager.verifyTransfer](signedtransfermanager.md#verifytransfer),[VolumeRestrictionTM.verifyTransfer](volumerestrictiontm.md#verifytransfer)
+⤿ Overridden Implementation(s): [BlacklistTransferManager.verifyTransfer](BlacklistTransferManager.md#verifytransfer),[CountTransferManager.verifyTransfer](CountTransferManager.md#verifytransfer),[GeneralTransferManager.verifyTransfer](GeneralTransferManager.md#verifytransfer),[KYCTransferManager.verifyTransfer](KYCTransferManager.md#verifytransfer),[LockUpTransferManager.verifyTransfer](LockUpTransferManager.md#verifytransfer),[ManualApprovalTransferManager.verifyTransfer](ManualApprovalTransferManager.md#verifytransfer),[PercentageTransferManager.verifyTransfer](PercentageTransferManager.md#verifytransfer),[ScheduledCheckpoint.verifyTransfer](ScheduledCheckpoint.md#verifytransfer),[SignedTransferManager.verifyTransfer](SignedTransferManager.md#verifytransfer),[VolumeRestrictionTM.verifyTransfer](VolumeRestrictionTM.md#verifytransfer)
 
-```javascript
+```js
 function verifyTransfer(address _from, address _to, uint256 _amount, bytes _data) external view
 returns(result enum ITransferManager.Result, partition bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_from | address |  |
-| \_to | address |  |
-| \_amount | uint256 |  |
-| \_data | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _from | address |  | 
+| _to | address |  | 
+| _amount | uint256 |  | 
+| _data | bytes |  | 
 
 ### getTokensByPartition
 
-⤿ Overridden Implementation\(s\): [BlacklistTransferManager.getTokensByPartition](blacklisttransfermanager.md#gettokensbypartition),[GeneralTransferManager.getTokensByPartition](generaltransfermanager.md#gettokensbypartition),[LockUpTransferManager.getTokensByPartition](lockuptransfermanager.md#gettokensbypartition),[TransferManager.getTokensByPartition](transfermanager.md#gettokensbypartition),[VolumeRestrictionTM.getTokensByPartition](volumerestrictiontm.md#gettokensbypartition)
+⤿ Overridden Implementation(s): [BlacklistTransferManager.getTokensByPartition](BlacklistTransferManager.md#gettokensbypartition),[GeneralTransferManager.getTokensByPartition](GeneralTransferManager.md#gettokensbypartition),[LockUpTransferManager.getTokensByPartition](LockUpTransferManager.md#gettokensbypartition),[TransferManager.getTokensByPartition](TransferManager.md#gettokensbypartition),[VolumeRestrictionTM.getTokensByPartition](VolumeRestrictionTM.md#gettokensbypartition)
 
 return the amount of tokens for a given user as per the partition
 
-```javascript
+```js
 function getTokensByPartition(bytes32 _partition, address _tokenHolder, uint256 _additionalBalance) external view
 returns(amount uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_partition | bytes32 | Identifier |
-| \_tokenHolder | address | Whom token amount need to query |
-| \_additionalBalance | uint256 | It is the `_value` that transfer during transfer/transferFrom function call |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _partition | bytes32 | Identifier | 
+| _tokenHolder | address | Whom token amount need to query | 
+| _additionalBalance | uint256 | It is the `_value` that transfer during transfer/transferFrom function call | 
 

@@ -6,122 +6,120 @@ original_id: MockOracle
 
 # MockOracle.sol
 
-View Source: [contracts/mocks/MockOracle.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/mocks/MockOracle.sol)
+View Source: [contracts/mocks/MockOracle.sol](../../contracts/mocks/MockOracle.sol)
 
-**↗ Extends:** [**IOracle**](ioracle.md)
+**↗ Extends: [IOracle](IOracle.md)**
 
 **MockOracle**
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 address public currency;
 bytes32 public currencySymbol;
 bytes32 public denominatedCurrency;
 uint256 public price;
+
 ```
 
 ## Functions
 
-* [\(address \_currency, bytes32 \_currencySymbol, bytes32 \_denominatedCurrency, uint256 \_price\)](mockoracle.md)
-* [changePrice\(uint256 \_price\)](mockoracle.md#changeprice)
-* [getCurrencyAddress\(\)](mockoracle.md#getcurrencyaddress)
-* [getCurrencySymbol\(\)](mockoracle.md#getcurrencysymbol)
-* [getCurrencyDenominated\(\)](mockoracle.md#getcurrencydenominated)
-* [getPrice\(\)](mockoracle.md#getprice)
+- [(address _currency, bytes32 _currencySymbol, bytes32 _denominatedCurrency, uint256 _price)](#)
+- [changePrice(uint256 _price)](#changeprice)
+- [getCurrencyAddress()](#getcurrencyaddress)
+- [getCurrencySymbol()](#getcurrencysymbol)
+- [getCurrencyDenominated()](#getcurrencydenominated)
+- [getPrice()](#getprice)
 
-```javascript
+### 
+
+```js
 function (address _currency, bytes32 _currencySymbol, bytes32 _denominatedCurrency, uint256 _price) public nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_currency | address |  |
-| \_currencySymbol | bytes32 |  |
-| \_denominatedCurrency | bytes32 |  |
-| \_price | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _currency | address |  | 
+| _currencySymbol | bytes32 |  | 
+| _denominatedCurrency | bytes32 |  | 
+| _price | uint256 |  | 
 
 ### changePrice
 
-```javascript
+```js
 function changePrice(uint256 _price) external nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_price | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _price | uint256 |  | 
 
 ### getCurrencyAddress
 
-⤾ overrides [IOracle.getCurrencyAddress](ioracle.md#getcurrencyaddress)
+⤾ overrides [IOracle.getCurrencyAddress](IOracle.md#getcurrencyaddress)
 
-Returns address of oracle currency \(0x0 for ETH\)
+Returns address of oracle currency (0x0 for ETH)
 
-```javascript
+```js
 function getCurrencyAddress() external view
 returns(address)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getCurrencySymbol
 
-⤾ overrides [IOracle.getCurrencySymbol](ioracle.md#getcurrencysymbol)
+⤾ overrides [IOracle.getCurrencySymbol](IOracle.md#getcurrencysymbol)
 
-Returns symbol of oracle currency \(0x0 for ETH\)
+Returns symbol of oracle currency (0x0 for ETH)
 
-```javascript
+```js
 function getCurrencySymbol() external view
 returns(bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getCurrencyDenominated
 
-⤾ overrides [IOracle.getCurrencyDenominated](ioracle.md#getcurrencydenominated)
+⤾ overrides [IOracle.getCurrencyDenominated](IOracle.md#getcurrencydenominated)
 
 Returns denomination of price
 
-```javascript
+```js
 function getCurrencyDenominated() external view
 returns(bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getPrice
 
-⤾ overrides [IOracle.getPrice](ioracle.md#getprice)
+⤾ overrides [IOracle.getPrice](IOracle.md#getprice)
 
 Returns price - should throw if not valid
 
-```javascript
+```js
 function getPrice() external nonpayable
 returns(uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 

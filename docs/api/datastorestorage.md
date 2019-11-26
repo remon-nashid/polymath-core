@@ -6,17 +6,16 @@ original_id: DataStoreStorage
 
 # DataStoreStorage.sol
 
-View Source: [contracts/datastore/DataStoreStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/datastore/DataStoreStorage.sol)
+View Source: [contracts/datastore/DataStoreStorage.sol](../../contracts/datastore/DataStoreStorage.sol)
 
-**↘ Derived Contracts:** [**DataStore**](datastore.md)**,** [**DataStoreProxy**](datastoreproxy.md)
+**↘ Derived Contracts: [DataStore](DataStore.md), [DataStoreProxy](DataStoreProxy.md)**
 
 **DataStoreStorage**
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 //internal members
 address internal __implementation;
 mapping(bytes32 => uint256) internal uintData;
@@ -34,6 +33,7 @@ bytes32 internal constant MANAGEDATA;
 
 //public members
 contract ISecurityToken public securityToken;
+
 ```
 
 ## Functions

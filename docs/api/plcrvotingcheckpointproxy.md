@@ -4,30 +4,32 @@ title: PLCRVotingCheckpointProxy
 original_id: PLCRVotingCheckpointProxy
 ---
 
-# Voting module for governance \(PLCRVotingCheckpointProxy.sol\)
+# Voting module for governance (PLCRVotingCheckpointProxy.sol)
 
-View Source: [contracts/modules/Checkpoint/Voting/PLCR/PLCRVotingCheckpointProxy.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/modules/Checkpoint/Voting/PLCR/PLCRVotingCheckpointProxy.sol)
+View Source: [contracts/modules/Checkpoint/Voting/PLCR/PLCRVotingCheckpointProxy.sol](../../contracts/modules/Checkpoint/Voting/PLCR/PLCRVotingCheckpointProxy.sol)
 
-**↗ Extends:** [**PLCRVotingCheckpointStorage**](plcrvotingcheckpointstorage.md)**,** [**VotingCheckpointStorage**](votingcheckpointstorage.md)**,** [**ModuleStorage**](modulestorage.md)**,** [**Pausable**](pausable.md)**,** [**OwnedUpgradeabilityProxy**](ownedupgradeabilityproxy.md)
+**↗ Extends: [PLCRVotingCheckpointStorage](PLCRVotingCheckpointStorage.md), [VotingCheckpointStorage](VotingCheckpointStorage.md), [ModuleStorage](ModuleStorage.md), [Pausable](Pausable.md), [OwnedUpgradeabilityProxy](OwnedUpgradeabilityProxy.md)**
 
 **PLCRVotingCheckpointProxy**
 
 ## Functions
 
-* [\(string \_version, address \_securityToken, address \_polyAddress, address \_implementation\)](plcrvotingcheckpointproxy.md)
+- [(string _version, address _securityToken, address _polyAddress, address _implementation)](#)
+
+### 
 
 Constructor
 
-```javascript
-function (string _version, address _securityToken, address _polyAddress, address _implementation) public nonpayable ModuleStorage
+```js
+function (string _version, address _securityToken, address _polyAddress, address _implementation) public nonpayable ModuleStorage 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_version | string |  |
-| \_securityToken | address | Address of the security token |
-| \_polyAddress | address | Address of the polytoken |
-| \_implementation | address | representing the address of the new implementation to be set |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _version | string |  | 
+| _securityToken | address | Address of the security token | 
+| _polyAddress | address | Address of the polytoken | 
+| _implementation | address | representing the address of the new implementation to be set | 
 

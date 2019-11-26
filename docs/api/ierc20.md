@@ -4,124 +4,123 @@ title: IERC20
 original_id: IERC20
 ---
 
-# ERC20 interface \(IERC20.sol\)
+# ERC20 interface (IERC20.sol)
 
-View Source: [openzeppelin-solidity/contracts/token/ERC20/IERC20.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol)
+View Source: [openzeppelin-solidity/contracts/token/ERC20/IERC20.sol](../../openzeppelin-solidity/contracts/token/ERC20/IERC20.sol)
 
-**↘ Derived Contracts:** [**ERC20**](erc20.md)
+**↘ Derived Contracts: [ERC20](ERC20.md)**
 
 **IERC20**
 
-see [https://eips.ethereum.org/EIPS/eip-20](https://eips.ethereum.org/EIPS/eip-20)
+see https://eips.ethereum.org/EIPS/eip-20
 
 **Events**
 
-```javascript
+```js
 event Transfer(address indexed from, address indexed to, uint256  value);
 event Approval(address indexed owner, address indexed spender, uint256  value);
 ```
 
 ## Functions
 
-* [transfer\(address to, uint256 value\)](ierc20.md#transfer)
-* [approve\(address spender, uint256 value\)](ierc20.md#approve)
-* [transferFrom\(address from, address to, uint256 value\)](ierc20.md#transferfrom)
-* [totalSupply\(\)](ierc20.md#totalsupply)
-* [balanceOf\(address who\)](ierc20.md#balanceof)
-* [allowance\(address owner, address spender\)](ierc20.md#allowance)
+- [transfer(address to, uint256 value)](#transfer)
+- [approve(address spender, uint256 value)](#approve)
+- [transferFrom(address from, address to, uint256 value)](#transferfrom)
+- [totalSupply()](#totalsupply)
+- [balanceOf(address who)](#balanceof)
+- [allowance(address owner, address spender)](#allowance)
 
 ### transfer
 
-⤿ Overridden Implementation\(s\): [ERC20.transfer](erc20.md#transfer),[SecurityToken.transfer](securitytoken.md#transfer)
+⤿ Overridden Implementation(s): [ERC20.transfer](ERC20.md#transfer),[SecurityToken.transfer](SecurityToken.md#transfer)
 
-```javascript
+```js
 function transfer(address to, uint256 value) external nonpayable
 returns(bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| to | address |  |
-| value | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| to | address |  | 
+| value | uint256 |  | 
 
 ### approve
 
-⤿ Overridden Implementation\(s\): [ERC20.approve](erc20.md#approve)
+⤿ Overridden Implementation(s): [ERC20.approve](ERC20.md#approve)
 
-```javascript
+```js
 function approve(address spender, uint256 value) external nonpayable
 returns(bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| spender | address |  |
-| value | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| spender | address |  | 
+| value | uint256 |  | 
 
 ### transferFrom
 
-⤿ Overridden Implementation\(s\): [ERC20.transferFrom](erc20.md#transferfrom),[SecurityToken.transferFrom](securitytoken.md#transferfrom)
+⤿ Overridden Implementation(s): [ERC20.transferFrom](ERC20.md#transferfrom),[SecurityToken.transferFrom](SecurityToken.md#transferfrom)
 
-```javascript
+```js
 function transferFrom(address from, address to, uint256 value) external nonpayable
 returns(bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| from | address |  |
-| to | address |  |
-| value | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| from | address |  | 
+| to | address |  | 
+| value | uint256 |  | 
 
 ### totalSupply
 
-⤿ Overridden Implementation\(s\): [ERC20.totalSupply](erc20.md#totalsupply)
+⤿ Overridden Implementation(s): [ERC20.totalSupply](ERC20.md#totalsupply)
 
-```javascript
+```js
 function totalSupply() external view
 returns(uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### balanceOf
 
-⤿ Overridden Implementation\(s\): [ERC20.balanceOf](erc20.md#balanceof)
+⤿ Overridden Implementation(s): [ERC20.balanceOf](ERC20.md#balanceof)
 
-```javascript
+```js
 function balanceOf(address who) external view
 returns(uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| who | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| who | address |  | 
 
 ### allowance
 
-⤿ Overridden Implementation\(s\): [ERC20.allowance](erc20.md#allowance)
+⤿ Overridden Implementation(s): [ERC20.allowance](ERC20.md#allowance)
 
-```javascript
+```js
 function allowance(address owner, address spender) external view
 returns(uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| owner | address |  |
-| spender | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| owner | address |  | 
+| spender | address |  | 
 

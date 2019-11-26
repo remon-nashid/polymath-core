@@ -6,17 +6,16 @@ original_id: PLCRVotingCheckpointStorage
 
 # PLCRVotingCheckpointStorage.sol
 
-View Source: [contracts/modules/Checkpoint/Voting/PLCR/PLCRVotingCheckpointStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/modules/Checkpoint/Voting/PLCR/PLCRVotingCheckpointStorage.sol)
+View Source: [contracts/modules/Checkpoint/Voting/PLCR/PLCRVotingCheckpointStorage.sol](../../contracts/modules/Checkpoint/Voting/PLCR/PLCRVotingCheckpointStorage.sol)
 
-**↘ Derived Contracts:** [**PLCRVotingCheckpoint**](plcrvotingcheckpoint.md)**,** [**PLCRVotingCheckpointProxy**](plcrvotingcheckpointproxy.md)
+**↘ Derived Contracts: [PLCRVotingCheckpoint](PLCRVotingCheckpoint.md), [PLCRVotingCheckpointProxy](PLCRVotingCheckpointProxy.md)**
 
 **PLCRVotingCheckpointStorage**
 
 **Enums**
-
 ### Stage
 
-```javascript
+```js
 enum Stage {
  PREP,
  COMMIT,
@@ -26,10 +25,9 @@ enum Stage {
 ```
 
 ## Structs
-
 ### Ballot
 
-```javascript
+```js
 struct Ballot {
  uint256 checkpointId,
  uint256 quorum,
@@ -47,7 +45,7 @@ struct Ballot {
 
 ### Vote
 
-```javascript
+```js
 struct Vote {
  uint256 voteOption,
  bytes32 secretVote
@@ -55,11 +53,11 @@ struct Vote {
 ```
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 struct PLCRVotingCheckpointStorage.Ballot[] internal ballots;
+
 ```
 
 ## Functions

@@ -4,30 +4,32 @@ title: PercentageTransferManagerProxy
 original_id: PercentageTransferManagerProxy
 ---
 
-# PercentageTransferManager module Proxy \(PercentageTransferManagerProxy.sol\)
+# PercentageTransferManager module Proxy (PercentageTransferManagerProxy.sol)
 
-View Source: [contracts/modules/TransferManager/PTM/PercentageTransferManagerProxy.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/modules/TransferManager/PTM/PercentageTransferManagerProxy.sol)
+View Source: [contracts/modules/TransferManager/PTM/PercentageTransferManagerProxy.sol](../../contracts/modules/TransferManager/PTM/PercentageTransferManagerProxy.sol)
 
-**↗ Extends:** [**PercentageTransferManagerStorage**](percentagetransfermanagerstorage.md)**,** [**ModuleStorage**](modulestorage.md)**,** [**Pausable**](pausable.md)**,** [**OwnedUpgradeabilityProxy**](ownedupgradeabilityproxy.md)
+**↗ Extends: [PercentageTransferManagerStorage](PercentageTransferManagerStorage.md), [ModuleStorage](ModuleStorage.md), [Pausable](Pausable.md), [OwnedUpgradeabilityProxy](OwnedUpgradeabilityProxy.md)**
 
 **PercentageTransferManagerProxy**
 
 ## Functions
 
-* [\(string \_version, address \_securityToken, address \_polyAddress, address \_implementation\)](percentagetransfermanagerproxy.md)
+- [(string _version, address _securityToken, address _polyAddress, address _implementation)](#)
+
+### 
 
 Constructor
 
-```javascript
-function (string _version, address _securityToken, address _polyAddress, address _implementation) public nonpayable ModuleStorage
+```js
+function (string _version, address _securityToken, address _polyAddress, address _implementation) public nonpayable ModuleStorage 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_version | string |  |
-| \_securityToken | address | Address of the security token |
-| \_polyAddress | address | Address of the polytoken |
-| \_implementation | address | representing the address of the new implementation to be set |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _version | string |  | 
+| _securityToken | address | Address of the security token | 
+| _polyAddress | address | Address of the polytoken | 
+| _implementation | address | representing the address of the new implementation to be set | 
 

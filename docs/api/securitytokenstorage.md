@@ -6,17 +6,16 @@ original_id: SecurityTokenStorage
 
 # SecurityTokenStorage.sol
 
-View Source: [contracts/tokens/SecurityTokenStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/tokens/SecurityTokenStorage.sol)
+View Source: [contracts/tokens/SecurityTokenStorage.sol](../../contracts/tokens/SecurityTokenStorage.sol)
 
-**↘ Derived Contracts:** [**SecurityToken**](securitytoken.md)**,** [**SecurityTokenProxy**](securitytokenproxy.md)**,** [**STGetter**](stgetter.md)
+**↘ Derived Contracts: [SecurityToken](SecurityToken.md), [SecurityTokenProxy](SecurityTokenProxy.md), [STGetter](STGetter.md)**
 
 **SecurityTokenStorage**
 
 ## Structs
-
 ### Document
 
-```javascript
+```js
 struct Document {
  bytes32 docHash,
  uint256 lastModified,
@@ -26,7 +25,7 @@ struct Document {
 
 ### SemanticVersion
 
-```javascript
+```js
 struct SemanticVersion {
  uint8 major,
  uint8 minor,
@@ -36,7 +35,7 @@ struct SemanticVersion {
 
 ### ModuleData
 
-```javascript
+```js
 struct ModuleData {
  bytes32 name,
  address module,
@@ -51,7 +50,7 @@ struct ModuleData {
 
 ### Checkpoint
 
-```javascript
+```js
 struct Checkpoint {
  uint256 checkpointId,
  uint256 value
@@ -59,10 +58,9 @@ struct Checkpoint {
 ```
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 //internal members
 uint8 internal constant PERMISSION_KEY;
 uint8 internal constant TRANSFER_KEY;
@@ -108,6 +106,7 @@ string public tokenDetails;
 bool public controllerDisabled;
 bool public transfersFrozen;
 uint256 public holderCount;
+
 ```
 
 ## Functions

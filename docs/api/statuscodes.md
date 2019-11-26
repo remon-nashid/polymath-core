@@ -6,15 +6,14 @@ original_id: StatusCodes
 
 # StatusCodes.sol
 
-View Source: [contracts/libraries/StatusCodes.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/libraries/StatusCodes.sol)
+View Source: [contracts/libraries/StatusCodes.sol](../../contracts/libraries/StatusCodes.sol)
 
 **StatusCodes**
 
 **Enums**
-
 ### Status
 
-```javascript
+```js
 enum Status {
  TransferFailure,
  TransferSuccess,
@@ -30,18 +29,18 @@ enum Status {
 
 ## Functions
 
-* [code\(enum StatusCodes.Status \_status\)](statuscodes.md#code)
+- [code(enum StatusCodes.Status _status)](#code)
 
 ### code
 
-```javascript
+```js
 function code(enum StatusCodes.Status _status) internal pure
 returns(bytes1)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_status | enum StatusCodes.Status |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _status | enum StatusCodes.Status |  | 
 

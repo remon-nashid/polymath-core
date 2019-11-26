@@ -4,30 +4,31 @@ title: MockModuleRegistry
 original_id: MockModuleRegistry
 ---
 
-# Registry contract for issuers to register their security tokens \(MockModuleRegistry.sol\)
+# Registry contract for issuers to register their security tokens (MockModuleRegistry.sol)
 
-View Source: [contracts/mocks/MockModuleRegistry.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/mocks/MockModuleRegistry.sol)
+View Source: [contracts/mocks/MockModuleRegistry.sol](../../contracts/mocks/MockModuleRegistry.sol)
 
-**↗ Extends:** [**ModuleRegistry**](moduleregistry.md)
+**↗ Extends: [ModuleRegistry](ModuleRegistry.md)**
 
 **MockModuleRegistry**
 
 ## Functions
 
-* [addMoreReputation\(address \_moduleFactory, address\[\] \_tokens\)](mockmoduleregistry.md#addmorereputation)
+- [addMoreReputation(address _moduleFactory, address[] _tokens)](#addmorereputation)
 
 ### addMoreReputation
 
-It is dummy functionality Alert! Alert! Do not use it for the mainnet release
+It is dummy functionality
+ Alert! Alert! Do not use it for the mainnet release
 
-```javascript
-function addMoreReputation(address _moduleFactory, address[] _tokens) public nonpayable onlyOwner
+```js
+function addMoreReputation(address _moduleFactory, address[] _tokens) public nonpayable onlyOwner 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_moduleFactory | address |  |
-| \_tokens | address\[\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _moduleFactory | address |  | 
+| _tokens | address[] |  | 
 

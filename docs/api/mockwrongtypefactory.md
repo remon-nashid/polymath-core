@@ -4,47 +4,48 @@ title: MockWrongTypeFactory
 original_id: MockWrongTypeFactory
 ---
 
-# Mock Contract Not fit for production environment \(MockWrongTypeFactory.sol\)
+# Mock Contract Not fit for production environment (MockWrongTypeFactory.sol)
 
-View Source: [contracts/mocks/MockWrongTypeFactory.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/mocks/MockWrongTypeFactory.sol)
+View Source: [contracts/mocks/MockWrongTypeFactory.sol](../../contracts/mocks/MockWrongTypeFactory.sol)
 
-**↗ Extends:** [**MockBurnFactory**](mockburnfactory.md)
+**↗ Extends: [MockBurnFactory](MockBurnFactory.md)**
 
 **MockWrongTypeFactory**
 
 ## Functions
 
-* [\(uint256 \_setupCost, address \_polymathRegistry, bool \_isFeeInPoly\)](mockwrongtypefactory.md)
-* [getTypes\(\)](mockwrongtypefactory.md#gettypes)
+- [(uint256 _setupCost, address _polymathRegistry, bool _isFeeInPoly)](#)
+- [getTypes()](#gettypes)
+
+### 
 
 Constructor
 
-```javascript
-function (uint256 _setupCost, address _polymathRegistry, bool _isFeeInPoly) public nonpayable MockBurnFactory
+```js
+function (uint256 _setupCost, address _polymathRegistry, bool _isFeeInPoly) public nonpayable MockBurnFactory 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_setupCost | uint256 | Setup cost of the module |
-| \_polymathRegistry | address | Address of the Polymath Registry |
-| \_isFeeInPoly | bool |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _setupCost | uint256 | Setup cost of the module | 
+| _polymathRegistry | address | Address of the Polymath Registry | 
+| _isFeeInPoly | bool |  | 
 
 ### getTypes
 
-⤾ overrides [ModuleFactory.getTypes](modulefactory.md#gettypes)
+⤾ overrides [ModuleFactory.getTypes](ModuleFactory.md#gettypes)
 
 Type of the Module factory
 
-```javascript
+```js
 function getTypes() external view
 returns(uint8[])
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 

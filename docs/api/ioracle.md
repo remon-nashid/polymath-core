@@ -6,84 +6,80 @@ original_id: IOracle
 
 # IOracle.sol
 
-View Source: [contracts/interfaces/IOracle.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/interfaces/IOracle.sol)
+View Source: [contracts/interfaces/IOracle.sol](../../contracts/interfaces/IOracle.sol)
 
-**↘ Derived Contracts:** [**MakerDAOOracle**](makerdaooracle.md)**,** [**MockOracle**](mockoracle.md)**,** [**StableOracle**](stableoracle.md)
+**↘ Derived Contracts: [MakerDAOOracle](MakerDAOOracle.md), [MockOracle](MockOracle.md), [StableOracle](StableOracle.md)**
 
 **IOracle**
 
 ## Functions
 
-* [getCurrencyAddress\(\)](ioracle.md#getcurrencyaddress)
-* [getCurrencySymbol\(\)](ioracle.md#getcurrencysymbol)
-* [getCurrencyDenominated\(\)](ioracle.md#getcurrencydenominated)
-* [getPrice\(\)](ioracle.md#getprice)
+- [getCurrencyAddress()](#getcurrencyaddress)
+- [getCurrencySymbol()](#getcurrencysymbol)
+- [getCurrencyDenominated()](#getcurrencydenominated)
+- [getPrice()](#getprice)
 
 ### getCurrencyAddress
 
-⤿ Overridden Implementation\(s\): [MakerDAOOracle.getCurrencyAddress](makerdaooracle.md#getcurrencyaddress),[MockOracle.getCurrencyAddress](mockoracle.md#getcurrencyaddress),[StableOracle.getCurrencyAddress](stableoracle.md#getcurrencyaddress)
+⤿ Overridden Implementation(s): [MakerDAOOracle.getCurrencyAddress](MakerDAOOracle.md#getcurrencyaddress),[MockOracle.getCurrencyAddress](MockOracle.md#getcurrencyaddress),[StableOracle.getCurrencyAddress](StableOracle.md#getcurrencyaddress)
 
-Returns address of oracle currency \(0x0 for ETH\)
+Returns address of oracle currency (0x0 for ETH)
 
-```javascript
+```js
 function getCurrencyAddress() external view
 returns(currency address)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getCurrencySymbol
 
-⤿ Overridden Implementation\(s\): [MakerDAOOracle.getCurrencySymbol](makerdaooracle.md#getcurrencysymbol),[MockOracle.getCurrencySymbol](mockoracle.md#getcurrencysymbol),[StableOracle.getCurrencySymbol](stableoracle.md#getcurrencysymbol)
+⤿ Overridden Implementation(s): [MakerDAOOracle.getCurrencySymbol](MakerDAOOracle.md#getcurrencysymbol),[MockOracle.getCurrencySymbol](MockOracle.md#getcurrencysymbol),[StableOracle.getCurrencySymbol](StableOracle.md#getcurrencysymbol)
 
-Returns symbol of oracle currency \(0x0 for ETH\)
+Returns symbol of oracle currency (0x0 for ETH)
 
-```javascript
+```js
 function getCurrencySymbol() external view
 returns(symbol bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getCurrencyDenominated
 
-⤿ Overridden Implementation\(s\): [MakerDAOOracle.getCurrencyDenominated](makerdaooracle.md#getcurrencydenominated),[MockOracle.getCurrencyDenominated](mockoracle.md#getcurrencydenominated),[StableOracle.getCurrencyDenominated](stableoracle.md#getcurrencydenominated)
+⤿ Overridden Implementation(s): [MakerDAOOracle.getCurrencyDenominated](MakerDAOOracle.md#getcurrencydenominated),[MockOracle.getCurrencyDenominated](MockOracle.md#getcurrencydenominated),[StableOracle.getCurrencyDenominated](StableOracle.md#getcurrencydenominated)
 
 Returns denomination of price
 
-```javascript
+```js
 function getCurrencyDenominated() external view
 returns(denominatedCurrency bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getPrice
 
-⤿ Overridden Implementation\(s\): [MakerDAOOracle.getPrice](makerdaooracle.md#getprice),[MockOracle.getPrice](mockoracle.md#getprice),[StableOracle.getPrice](stableoracle.md#getprice)
+⤿ Overridden Implementation(s): [MakerDAOOracle.getPrice](MakerDAOOracle.md#getprice),[MockOracle.getPrice](MockOracle.md#getprice),[StableOracle.getPrice](StableOracle.md#getprice)
 
 Returns price - should throw if not valid
 
-```javascript
+```js
 function getPrice() external nonpayable
 returns(price uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 

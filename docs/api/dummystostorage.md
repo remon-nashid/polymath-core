@@ -4,23 +4,23 @@ title: DummySTOStorage
 original_id: DummySTOStorage
 ---
 
-# Contract used to store layout for the DummySTO storage \(DummySTOStorage.sol\)
+# Contract used to store layout for the DummySTO storage (DummySTOStorage.sol)
 
-View Source: [contracts/mocks/Dummy/DummySTOStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/mocks/Dummy/DummySTOStorage.sol)
+View Source: [contracts/mocks/Dummy/DummySTOStorage.sol](../../contracts/mocks/Dummy/DummySTOStorage.sol)
 
-**↘ Derived Contracts:** [**DummySTO**](dummysto.md)**,** [**DummySTOProxy**](dummystoproxy.md)
+**↘ Derived Contracts: [DummySTO](DummySTO.md), [DummySTOProxy](DummySTOProxy.md)**
 
 **DummySTOStorage**
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 uint256 public investorCount;
 uint256 public cap;
 string public someString;
 mapping(address => uint256) public investors;
+
 ```
 
 ## Functions

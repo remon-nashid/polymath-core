@@ -4,61 +4,61 @@ title: TransferManager
 original_id: TransferManager
 ---
 
-# Base abstract contract to be implemented by all Transfer Manager modules \(TransferManager.sol\)
+# Base abstract contract to be implemented by all Transfer Manager modules (TransferManager.sol)
 
-View Source: [contracts/modules/TransferManager/TransferManager.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/modules/TransferManager/TransferManager.sol)
+View Source: [contracts/modules/TransferManager/TransferManager.sol](../../contracts/modules/TransferManager/TransferManager.sol)
 
-**↗ Extends:** [**ITransferManager**](itransfermanager.md)**,** [**Module**](module.md) **↘ Derived Contracts:** [**BlacklistTransferManager**](blacklisttransfermanager.md)**,** [**CountTransferManager**](counttransfermanager.md)**,** [**GeneralTransferManager**](generaltransfermanager.md)**,** [**KYCTransferManager**](kyctransfermanager.md)**,** [**LockUpTransferManager**](lockuptransfermanager.md)**,** [**ManualApprovalTransferManager**](manualapprovaltransfermanager.md)**,** [**PercentageTransferManager**](percentagetransfermanager.md)**,** [**ScheduledCheckpoint**](scheduledcheckpoint.md)**,** [**SignedTransferManager**](signedtransfermanager.md)**,** [**VolumeRestrictionTM**](volumerestrictiontm.md)
+**↗ Extends: [ITransferManager](ITransferManager.md), [Module](Module.md)**
+**↘ Derived Contracts: [BlacklistTransferManager](BlacklistTransferManager.md), [CountTransferManager](CountTransferManager.md), [GeneralTransferManager](GeneralTransferManager.md), [KYCTransferManager](KYCTransferManager.md), [LockUpTransferManager](LockUpTransferManager.md), [ManualApprovalTransferManager](ManualApprovalTransferManager.md), [PercentageTransferManager](PercentageTransferManager.md), [ScheduledCheckpoint](ScheduledCheckpoint.md), [SignedTransferManager](SignedTransferManager.md), [VolumeRestrictionTM](VolumeRestrictionTM.md)**
 
 **TransferManager**
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 bytes32 public constant LOCKED;
 bytes32 public constant UNLOCKED;
+
 ```
 
 ## Modifiers
 
-* [onlySecurityToken](transfermanager.md#onlysecuritytoken)
+- [onlySecurityToken](#onlysecuritytoken)
 
 ### onlySecurityToken
 
-```javascript
+```js
 modifier onlySecurityToken() internal
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ## Functions
 
-* [getTokensByPartition\(bytes32 \_partition, address \_tokenHolder, uint256 \)](transfermanager.md#gettokensbypartition)
+- [getTokensByPartition(bytes32 _partition, address _tokenHolder, uint256 )](#gettokensbypartition)
 
 ### getTokensByPartition
 
-⤾ overrides [ITransferManager.getTokensByPartition](itransfermanager.md#gettokensbypartition)
+⤾ overrides [ITransferManager.getTokensByPartition](ITransferManager.md#gettokensbypartition)
 
-⤿ Overridden Implementation\(s\): [BlacklistTransferManager.getTokensByPartition](blacklisttransfermanager.md#gettokensbypartition),[GeneralTransferManager.getTokensByPartition](generaltransfermanager.md#gettokensbypartition),[LockUpTransferManager.getTokensByPartition](lockuptransfermanager.md#gettokensbypartition),[VolumeRestrictionTM.getTokensByPartition](volumerestrictiontm.md#gettokensbypartition)
+⤿ Overridden Implementation(s): [BlacklistTransferManager.getTokensByPartition](BlacklistTransferManager.md#gettokensbypartition),[GeneralTransferManager.getTokensByPartition](GeneralTransferManager.md#gettokensbypartition),[LockUpTransferManager.getTokensByPartition](LockUpTransferManager.md#gettokensbypartition),[VolumeRestrictionTM.getTokensByPartition](VolumeRestrictionTM.md#gettokensbypartition)
 
 return the amount of tokens for a given user as per the partition
 
-```javascript
+```js
 function getTokensByPartition(bytes32 _partition, address _tokenHolder, uint256 ) external view
 returns(uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_partition | bytes32 |  |
-| \_tokenHolder | address |  |
-|  | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _partition | bytes32 |  | 
+| _tokenHolder | address |  | 
+|  | uint256 |  | 
 

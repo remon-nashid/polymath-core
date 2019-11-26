@@ -4,92 +4,88 @@ title: Pausable
 original_id: Pausable
 ---
 
-# Utility contract to allow pausing and unpausing of certain functions \(Pausable.sol\)
+# Utility contract to allow pausing and unpausing of certain functions (Pausable.sol)
 
-View Source: [contracts/Pausable.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/Pausable.sol)
+View Source: [contracts/Pausable.sol](../../contracts/Pausable.sol)
 
-**↘ Derived Contracts:** [**BlacklistTransferManagerProxy**](blacklisttransfermanagerproxy.md)**,** [**CappedSTOProxy**](cappedstoproxy.md)**,** [**CountTransferManagerProxy**](counttransfermanagerproxy.md)**,** [**DummySTOProxy**](dummystoproxy.md)**,** [**ERC20DividendCheckpointProxy**](erc20dividendcheckpointproxy.md)**,** [**EtherDividendCheckpointProxy**](etherdividendcheckpointproxy.md)**,** [**GeneralPermissionManagerProxy**](generalpermissionmanagerproxy.md)**,** [**GeneralTransferManagerProxy**](generaltransfermanagerproxy.md)**,** [**LockUpTransferManagerProxy**](lockuptransfermanagerproxy.md)**,** [**ManualApprovalTransferManagerProxy**](manualapprovaltransfermanagerproxy.md)**,** [**Module**](module.md)**,** [**PercentageTransferManagerProxy**](percentagetransfermanagerproxy.md)**,** [**PLCRVotingCheckpointProxy**](plcrvotingcheckpointproxy.md)**,** [**PreSaleSTOProxy**](presalestoproxy.md)**,** [**USDTieredSTOProxy**](usdtieredstoproxy.md)**,** [**VestingEscrowWalletProxy**](vestingescrowwalletproxy.md)**,** [**VolumeRestrictionTMProxy**](volumerestrictiontmproxy.md)**,** [**WeightedVoteCheckpointProxy**](weightedvotecheckpointproxy.md)
+**↘ Derived Contracts: [BlacklistTransferManagerProxy](BlacklistTransferManagerProxy.md), [CappedSTOProxy](CappedSTOProxy.md), [CountTransferManagerProxy](CountTransferManagerProxy.md), [DummySTOProxy](DummySTOProxy.md), [ERC20DividendCheckpointProxy](ERC20DividendCheckpointProxy.md), [EtherDividendCheckpointProxy](EtherDividendCheckpointProxy.md), [GeneralPermissionManagerProxy](GeneralPermissionManagerProxy.md), [GeneralTransferManagerProxy](GeneralTransferManagerProxy.md), [LockUpTransferManagerProxy](LockUpTransferManagerProxy.md), [ManualApprovalTransferManagerProxy](ManualApprovalTransferManagerProxy.md), [Module](Module.md), [PercentageTransferManagerProxy](PercentageTransferManagerProxy.md), [PLCRVotingCheckpointProxy](PLCRVotingCheckpointProxy.md), [PreSaleSTOProxy](PreSaleSTOProxy.md), [USDTieredSTOProxy](USDTieredSTOProxy.md), [VestingEscrowWalletProxy](VestingEscrowWalletProxy.md), [VolumeRestrictionTMProxy](VolumeRestrictionTMProxy.md), [WeightedVoteCheckpointProxy](WeightedVoteCheckpointProxy.md)**
 
 **Pausable**
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 bool public paused;
+
 ```
 
 **Events**
 
-```javascript
+```js
 event Pause(address  account);
 event Unpause(address  account);
 ```
 
 ## Modifiers
 
-* [whenNotPaused](pausable.md#whennotpaused)
-* [whenPaused](pausable.md#whenpaused)
+- [whenNotPaused](#whennotpaused)
+- [whenPaused](#whenpaused)
 
 ### whenNotPaused
 
 Modifier to make a function callable only when the contract is not paused.
 
-```javascript
+```js
 modifier whenNotPaused() internal
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### whenPaused
 
 Modifier to make a function callable only when the contract is paused.
 
-```javascript
+```js
 modifier whenPaused() internal
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ## Functions
 
-* [\_pause\(\)](pausable.md#_pause)
-* [\_unpause\(\)](pausable.md#_unpause)
+- [_pause()](#_pause)
+- [_unpause()](#_unpause)
 
-### \_pause
+### _pause
 
 Called by the owner to pause, triggers stopped state
 
-```javascript
-function _pause() internal nonpayable whenNotPaused
+```js
+function _pause() internal nonpayable whenNotPaused 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
-
-### \_unpause
+### _unpause
 
 Called by the owner to unpause, returns to normal state
 
-```javascript
-function _unpause() internal nonpayable whenPaused
+```js
+function _unpause() internal nonpayable whenPaused 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 

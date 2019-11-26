@@ -6,15 +6,14 @@ original_id: OraclizeI
 
 # OraclizeI.sol
 
-View Source: [contracts/external/oraclizeAPI.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/external/oraclizeAPI.sol)
+View Source: [contracts/external/oraclizeAPI.sol](../../contracts/external/oraclizeAPI.sol)
 
 **OraclizeI**
 
 ## Structs
-
 ### buffer
 
-```javascript
+```js
 struct buffer {
  bytes buf,
  uint256 capacity
@@ -22,10 +21,9 @@ struct buffer {
 ```
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 //public members
 address public cbAddress;
 
@@ -58,393 +56,392 @@ uint8 internal constant networkID_testnet;
 uint8 internal constant networkID_consensys;
 mapping(bytes32 => bytes32) internal oraclize_randomDS_args;
 mapping(bytes32 => bool) internal oraclize_randomDS_sessionKeysHashVerified;
+
 ```
 
 ## Modifiers
 
-* [oraclizeAPI](oraclizei.md#oraclizeapi)
-* [oraclize\_randomDS\_proofVerify](oraclizei.md#oraclize_randomds_proofverify)
+- [oraclizeAPI](#oraclizeapi)
+- [oraclize_randomDS_proofVerify](#oraclize_randomds_proofverify)
 
 ### oraclizeAPI
 
-```javascript
+```js
 modifier oraclizeAPI() internal
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
+### oraclize_randomDS_proofVerify
 
-### oraclize\_randomDS\_proofVerify
-
-```javascript
+```js
 modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) internal
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_queryId | bytes32 |  |
-| \_result | string |  |
-| \_proof | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _queryId | bytes32 |  | 
+| _result | string |  | 
+| _proof | bytes |  | 
 
 ## Functions
 
-* [f\(bytes x\)](oraclizei.md#f)
-* [setProofType\(bytes1 \_proofType\)](oraclizei.md#setprooftype)
-* [setCustomGasPrice\(uint256 \_gasPrice\)](oraclizei.md#setcustomgasprice)
-* [getPrice\(string \_datasource\)](oraclizei.md#getprice)
-* [randomDS\_getSessionPubKeyHash\(\)](oraclizei.md#randomds_getsessionpubkeyhash)
-* [getPrice\(string \_datasource, uint256 \_gasLimit\)](oraclizei.md#getprice)
-* [queryN\(uint256 \_timestamp, string \_datasource, bytes \_argN\)](oraclizei.md#queryn)
-* [query\(uint256 \_timestamp, string \_datasource, string \_arg\)](oraclizei.md#query)
-* [query2\(uint256 \_timestamp, string \_datasource, string \_arg1, string \_arg2\)](oraclizei.md#query2)
-* [query\_withGasLimit\(uint256 \_timestamp, string \_datasource, string \_arg, uint256 \_gasLimit\)](oraclizei.md#query_withgaslimit)
-* [queryN\_withGasLimit\(uint256 \_timestamp, string \_datasource, bytes \_argN, uint256 \_gasLimit\)](oraclizei.md#queryn_withgaslimit)
-* [query2\_withGasLimit\(uint256 \_timestamp, string \_datasource, string \_arg1, string \_arg2, uint256 \_gasLimit\)](oraclizei.md#query2_withgaslimit)
-* [getAddress\(\)](oraclizei.md#getaddress)
-* [init\(struct Buffer.buffer \_buf, uint256 \_capacity\)](oraclizei.md#init)
-* [resize\(struct Buffer.buffer \_buf, uint256 \_capacity\)](oraclizei.md#resize)
-* [max\(uint256 \_a, uint256 \_b\)](oraclizei.md#max)
-* [append\(struct Buffer.buffer \_buf, bytes \_data\)](oraclizei.md#append)
-* [append\(struct Buffer.buffer \_buf, uint8 \_data\)](oraclizei.md#append)
-* [appendInt\(struct Buffer.buffer \_buf, uint256 \_data, uint256 \_len\)](oraclizei.md#appendint)
-* [encodeType\(struct Buffer.buffer \_buf, uint8 \_major, uint256 \_value\)](oraclizei.md#encodetype)
-* [encodeIndefiniteLengthType\(struct Buffer.buffer \_buf, uint8 \_major\)](oraclizei.md#encodeindefinitelengthtype)
-* [encodeUInt\(struct Buffer.buffer \_buf, uint256 \_value\)](oraclizei.md#encodeuint)
-* [encodeInt\(struct Buffer.buffer \_buf, int256 \_value\)](oraclizei.md#encodeint)
-* [encodeBytes\(struct Buffer.buffer \_buf, bytes \_value\)](oraclizei.md#encodebytes)
-* [encodeString\(struct Buffer.buffer \_buf, string \_value\)](oraclizei.md#encodestring)
-* [startArray\(struct Buffer.buffer \_buf\)](oraclizei.md#startarray)
-* [startMap\(struct Buffer.buffer \_buf\)](oraclizei.md#startmap)
-* [endSequence\(struct Buffer.buffer \_buf\)](oraclizei.md#endsequence)
-* [oraclize\_setNetwork\(uint8 \_networkID\)](oraclizei.md#oraclize_setnetwork)
-* [oraclize\_setNetworkName\(string \_network\_name\)](oraclizei.md#oraclize_setnetworkname)
-* [oraclize\_getNetworkName\(\)](oraclizei.md#oraclize_getnetworkname)
-* [oraclize\_setNetwork\(\)](oraclizei.md#oraclize_setnetwork)
-* [\_\_callback\(bytes32 \_myid, string \_result\)](oraclizei.md#__callback)
-* [\_\_callback\(bytes32 \_myid, string \_result, bytes \_proof\)](oraclizei.md#__callback)
-* [oraclize\_getPrice\(string \_datasource\)](oraclizei.md#oraclize_getprice)
-* [oraclize\_getPrice\(string \_datasource, uint256 \_gasLimit\)](oraclizei.md#oraclize_getprice)
-* [oraclize\_query\(string \_datasource, string \_arg\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string \_arg\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string \_arg, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string \_arg, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string \_arg1, string \_arg2\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string \_arg1, string \_arg2\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string \_arg1, string \_arg2, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string \_arg1, string \_arg2, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[\] \_argN\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[\] \_argN\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[\] \_argN, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[\] \_argN, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[1\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[1\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[1\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[1\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[2\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[2\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[2\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[2\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[3\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[3\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[3\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[3\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[4\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[4\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[4\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[4\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[5\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[5\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, string\[5\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, string\[5\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[\] \_argN\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[\] \_argN\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[\] \_argN, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[\] \_argN, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[1\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[1\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[1\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[1\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[2\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[2\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[2\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[2\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[3\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[3\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[3\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[3\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[4\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[4\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[4\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[4\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[5\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[5\] \_args\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(uint256 \_timestamp, string \_datasource, bytes\[5\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_query\(string \_datasource, bytes\[5\] \_args, uint256 \_gasLimit\)](oraclizei.md#oraclize_query)
-* [oraclize\_setProof\(bytes1 \_proofP\)](oraclizei.md#oraclize_setproof)
-* [oraclize\_cbAddress\(\)](oraclizei.md#oraclize_cbaddress)
-* [getCodeSize\(address \_addr\)](oraclizei.md#getcodesize)
-* [oraclize\_setCustomGasPrice\(uint256 \_gasPrice\)](oraclizei.md#oraclize_setcustomgasprice)
-* [oraclize\_randomDS\_getSessionPubKeyHash\(\)](oraclizei.md#oraclize_randomds_getsessionpubkeyhash)
-* [parseAddr\(string \_a\)](oraclizei.md#parseaddr)
-* [strCompare\(string \_a, string \_b\)](oraclizei.md#strcompare)
-* [indexOf\(string \_haystack, string \_needle\)](oraclizei.md#indexof)
-* [strConcat\(string \_a, string \_b\)](oraclizei.md#strconcat)
-* [strConcat\(string \_a, string \_b, string \_c\)](oraclizei.md#strconcat)
-* [strConcat\(string \_a, string \_b, string \_c, string \_d\)](oraclizei.md#strconcat)
-* [strConcat\(string \_a, string \_b, string \_c, string \_d, string \_e\)](oraclizei.md#strconcat)
-* [safeParseInt\(string \_a\)](oraclizei.md#safeparseint)
-* [safeParseInt\(string \_a, uint256 \_b\)](oraclizei.md#safeparseint)
-* [parseInt\(string \_a\)](oraclizei.md#parseint)
-* [parseInt\(string \_a, uint256 \_b\)](oraclizei.md#parseint)
-* [uint2str\(uint256 \_i\)](oraclizei.md#uint2str)
-* [stra2cbor\(string\[\] \_arr\)](oraclizei.md#stra2cbor)
-* [ba2cbor\(bytes\[\] \_arr\)](oraclizei.md#ba2cbor)
-* [oraclize\_newRandomDSQuery\(uint256 \_delay, uint256 \_nbytes, uint256 \_customGasLimit\)](oraclizei.md#oraclize_newrandomdsquery)
-* [oraclize\_randomDS\_setCommitment\(bytes32 \_queryId, bytes32 \_commitment\)](oraclizei.md#oraclize_randomds_setcommitment)
-* [verifySig\(bytes32 \_tosignh, bytes \_dersig, bytes \_pubkey\)](oraclizei.md#verifysig)
-* [oraclize\_randomDS\_proofVerify\_\_sessionKeyValidity\(bytes \_proof, uint256 \_sig2offset\)](oraclizei.md#oraclize_randomds_proofverify__sessionkeyvalidity)
-* [oraclize\_randomDS\_proofVerify\_\_returnCode\(bytes32 \_queryId, string \_result, bytes \_proof\)](oraclizei.md#oraclize_randomds_proofverify__returncode)
-* [matchBytes32Prefix\(bytes32 \_content, bytes \_prefix, uint256 \_nRandomBytes\)](oraclizei.md#matchbytes32prefix)
-* [oraclize\_randomDS\_proofVerify\_\_main\(bytes \_proof, bytes32 \_queryId, bytes \_result, string \_contextName\)](oraclizei.md#oraclize_randomds_proofverify__main)
-* [copyBytes\(bytes \_from, uint256 \_fromOffset, uint256 \_length, bytes \_to, uint256 \_toOffset\)](oraclizei.md#copybytes)
-* [safer\_ecrecover\(bytes32 \_hash, uint8 \_v, bytes32 \_r, bytes32 \_s\)](oraclizei.md#safer_ecrecover)
-* [ecrecovery\(bytes32 \_hash, bytes \_sig\)](oraclizei.md#ecrecovery)
-* [safeMemoryCleaner\(\)](oraclizei.md#safememorycleaner)
+- [f(bytes x)](#f)
+- [setProofType(bytes1 _proofType)](#setprooftype)
+- [setCustomGasPrice(uint256 _gasPrice)](#setcustomgasprice)
+- [getPrice(string _datasource)](#getprice)
+- [randomDS_getSessionPubKeyHash()](#randomds_getsessionpubkeyhash)
+- [getPrice(string _datasource, uint256 _gasLimit)](#getprice)
+- [queryN(uint256 _timestamp, string _datasource, bytes _argN)](#queryn)
+- [query(uint256 _timestamp, string _datasource, string _arg)](#query)
+- [query2(uint256 _timestamp, string _datasource, string _arg1, string _arg2)](#query2)
+- [query_withGasLimit(uint256 _timestamp, string _datasource, string _arg, uint256 _gasLimit)](#query_withgaslimit)
+- [queryN_withGasLimit(uint256 _timestamp, string _datasource, bytes _argN, uint256 _gasLimit)](#queryn_withgaslimit)
+- [query2_withGasLimit(uint256 _timestamp, string _datasource, string _arg1, string _arg2, uint256 _gasLimit)](#query2_withgaslimit)
+- [getAddress()](#getaddress)
+- [init(struct Buffer.buffer _buf, uint256 _capacity)](#init)
+- [resize(struct Buffer.buffer _buf, uint256 _capacity)](#resize)
+- [max(uint256 _a, uint256 _b)](#max)
+- [append(struct Buffer.buffer _buf, bytes _data)](#append)
+- [append(struct Buffer.buffer _buf, uint8 _data)](#append)
+- [appendInt(struct Buffer.buffer _buf, uint256 _data, uint256 _len)](#appendint)
+- [encodeType(struct Buffer.buffer _buf, uint8 _major, uint256 _value)](#encodetype)
+- [encodeIndefiniteLengthType(struct Buffer.buffer _buf, uint8 _major)](#encodeindefinitelengthtype)
+- [encodeUInt(struct Buffer.buffer _buf, uint256 _value)](#encodeuint)
+- [encodeInt(struct Buffer.buffer _buf, int256 _value)](#encodeint)
+- [encodeBytes(struct Buffer.buffer _buf, bytes _value)](#encodebytes)
+- [encodeString(struct Buffer.buffer _buf, string _value)](#encodestring)
+- [startArray(struct Buffer.buffer _buf)](#startarray)
+- [startMap(struct Buffer.buffer _buf)](#startmap)
+- [endSequence(struct Buffer.buffer _buf)](#endsequence)
+- [oraclize_setNetwork(uint8 _networkID)](#oraclize_setnetwork)
+- [oraclize_setNetworkName(string _network_name)](#oraclize_setnetworkname)
+- [oraclize_getNetworkName()](#oraclize_getnetworkname)
+- [oraclize_setNetwork()](#oraclize_setnetwork)
+- [__callback(bytes32 _myid, string _result)](#__callback)
+- [__callback(bytes32 _myid, string _result, bytes _proof)](#__callback)
+- [oraclize_getPrice(string _datasource)](#oraclize_getprice)
+- [oraclize_getPrice(string _datasource, uint256 _gasLimit)](#oraclize_getprice)
+- [oraclize_query(string _datasource, string _arg)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string _arg)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string _arg, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string _arg, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string _arg1, string _arg2)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string _arg1, string _arg2)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string _arg1, string _arg2, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string _arg1, string _arg2, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[] _argN)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[] _argN)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[] _argN, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[] _argN, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[1] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[1] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[1] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[1] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[2] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[2] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[2] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[2] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[3] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[3] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[3] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[3] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[4] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[4] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[4] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[4] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[5] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[5] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, string[5] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, string[5] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[] _argN)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[] _argN)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[] _argN, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[] _argN, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[1] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[1] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[1] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[1] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[2] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[2] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[2] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[2] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[3] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[3] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[3] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[3] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[4] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[4] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[4] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[4] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[5] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[5] _args)](#oraclize_query)
+- [oraclize_query(uint256 _timestamp, string _datasource, bytes[5] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_query(string _datasource, bytes[5] _args, uint256 _gasLimit)](#oraclize_query)
+- [oraclize_setProof(bytes1 _proofP)](#oraclize_setproof)
+- [oraclize_cbAddress()](#oraclize_cbaddress)
+- [getCodeSize(address _addr)](#getcodesize)
+- [oraclize_setCustomGasPrice(uint256 _gasPrice)](#oraclize_setcustomgasprice)
+- [oraclize_randomDS_getSessionPubKeyHash()](#oraclize_randomds_getsessionpubkeyhash)
+- [parseAddr(string _a)](#parseaddr)
+- [strCompare(string _a, string _b)](#strcompare)
+- [indexOf(string _haystack, string _needle)](#indexof)
+- [strConcat(string _a, string _b)](#strconcat)
+- [strConcat(string _a, string _b, string _c)](#strconcat)
+- [strConcat(string _a, string _b, string _c, string _d)](#strconcat)
+- [strConcat(string _a, string _b, string _c, string _d, string _e)](#strconcat)
+- [safeParseInt(string _a)](#safeparseint)
+- [safeParseInt(string _a, uint256 _b)](#safeparseint)
+- [parseInt(string _a)](#parseint)
+- [parseInt(string _a, uint256 _b)](#parseint)
+- [uint2str(uint256 _i)](#uint2str)
+- [stra2cbor(string[] _arr)](#stra2cbor)
+- [ba2cbor(bytes[] _arr)](#ba2cbor)
+- [oraclize_newRandomDSQuery(uint256 _delay, uint256 _nbytes, uint256 _customGasLimit)](#oraclize_newrandomdsquery)
+- [oraclize_randomDS_setCommitment(bytes32 _queryId, bytes32 _commitment)](#oraclize_randomds_setcommitment)
+- [verifySig(bytes32 _tosignh, bytes _dersig, bytes _pubkey)](#verifysig)
+- [oraclize_randomDS_proofVerify__sessionKeyValidity(bytes _proof, uint256 _sig2offset)](#oraclize_randomds_proofverify__sessionkeyvalidity)
+- [oraclize_randomDS_proofVerify__returnCode(bytes32 _queryId, string _result, bytes _proof)](#oraclize_randomds_proofverify__returncode)
+- [matchBytes32Prefix(bytes32 _content, bytes _prefix, uint256 _nRandomBytes)](#matchbytes32prefix)
+- [oraclize_randomDS_proofVerify__main(bytes _proof, bytes32 _queryId, bytes _result, string _contextName)](#oraclize_randomds_proofverify__main)
+- [copyBytes(bytes _from, uint256 _fromOffset, uint256 _length, bytes _to, uint256 _toOffset)](#copybytes)
+- [safer_ecrecover(bytes32 _hash, uint8 _v, bytes32 _r, bytes32 _s)](#safer_ecrecover)
+- [ecrecovery(bytes32 _hash, bytes _sig)](#ecrecovery)
+- [safeMemoryCleaner()](#safememorycleaner)
 
 ### f
 
-```javascript
+```js
 function f(bytes x) external nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| x | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| x | bytes |  | 
 
 ### setProofType
 
-```javascript
+```js
 function setProofType(bytes1 _proofType) external nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_proofType | bytes1 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _proofType | bytes1 |  | 
 
 ### setCustomGasPrice
 
-```javascript
+```js
 function setCustomGasPrice(uint256 _gasPrice) external nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_gasPrice | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _gasPrice | uint256 |  | 
 
 ### getPrice
 
-```javascript
+```js
 function getPrice(string _datasource) public nonpayable
 returns(_dsprice uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
 
-### randomDS\_getSessionPubKeyHash
+### randomDS_getSessionPubKeyHash
 
-```javascript
+```js
 function randomDS_getSessionPubKeyHash() external view
 returns(_sessionKeyHash bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getPrice
 
-```javascript
+```js
 function getPrice(string _datasource, uint256 _gasLimit) public nonpayable
 returns(_dsprice uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _gasLimit | uint256 |  | 
 
 ### queryN
 
-```javascript
+```js
 function queryN(uint256 _timestamp, string _datasource, bytes _argN) public payable
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_argN | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _argN | bytes |  | 
 
 ### query
 
-```javascript
+```js
 function query(uint256 _timestamp, string _datasource, string _arg) external payable
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_arg | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _arg | string |  | 
 
 ### query2
 
-```javascript
+```js
 function query2(uint256 _timestamp, string _datasource, string _arg1, string _arg2) public payable
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_arg1 | string |  |
-| \_arg2 | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _arg1 | string |  | 
+| _arg2 | string |  | 
 
-### query\_withGasLimit
+### query_withGasLimit
 
-```javascript
+```js
 function query_withGasLimit(uint256 _timestamp, string _datasource, string _arg, uint256 _gasLimit) external payable
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_arg | string |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _arg | string |  | 
+| _gasLimit | uint256 |  | 
 
-### queryN\_withGasLimit
+### queryN_withGasLimit
 
-```javascript
+```js
 function queryN_withGasLimit(uint256 _timestamp, string _datasource, bytes _argN, uint256 _gasLimit) external payable
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_argN | bytes |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _argN | bytes |  | 
+| _gasLimit | uint256 |  | 
 
-### query2\_withGasLimit
+### query2_withGasLimit
 
-```javascript
+```js
 function query2_withGasLimit(uint256 _timestamp, string _datasource, string _arg1, string _arg2, uint256 _gasLimit) external payable
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_arg1 | string |  |
-| \_arg2 | string |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _arg1 | string |  | 
+| _arg2 | string |  | 
+| _gasLimit | uint256 |  | 
 
 ### getAddress
 
-```javascript
+```js
 function getAddress() public nonpayable
 returns(_address address)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### init
 
-```javascript
+```js
 function init(struct Buffer.buffer _buf, uint256 _capacity) internal pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
-| \_capacity | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
+| _capacity | uint256 |  | 
 
 ### resize
 
-```javascript
+```js
 function resize(struct Buffer.buffer _buf, uint256 _capacity) private pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
-| \_capacity | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
+| _capacity | uint256 |  | 
 
 ### max
 
-```javascript
+```js
 function max(uint256 _a, uint256 _b) private pure
 returns(_max uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | uint256 |  |
-| \_b | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | uint256 |  | 
+| _b | uint256 |  | 
 
 ### append
 
-Appends a byte array to the end of the buffer. Resizes if doing so would exceed the capacity of the buffer.
+Appends a byte array to the end of the buffer. Resizes if doing so
+     would exceed the capacity of the buffer.
 
-```javascript
+```js
 function append(struct Buffer.buffer _buf, bytes _data) internal pure
 returns(_buffer struct Buffer.buffer)
 ```
@@ -455,16 +452,17 @@ The original buffer.
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer | The buffer to append to. |
-| \_data | bytes | The data to append. |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer | The buffer to append to. | 
+| _data | bytes | The data to append. | 
 
 ### append
 
-Appends a byte to the end of the buffer. Resizes if doing so would exceed the capacity of the buffer.
+Appends a byte to the end of the buffer. Resizes if doing so would
+exceed the capacity of the buffer.
 
-```javascript
+```js
 function append(struct Buffer.buffer _buf, uint8 _data) internal pure
 ```
 
@@ -474,16 +472,17 @@ The original buffer.
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer | The buffer to append to. |
-| \_data | uint8 | The data to append. |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer | The buffer to append to. | 
+| _data | uint8 | The data to append. | 
 
 ### appendInt
 
-Appends a byte to the end of the buffer. Resizes if doing so would exceed the capacity of the buffer.
+Appends a byte to the end of the buffer. Resizes if doing so would
+exceed the capacity of the buffer.
 
-```javascript
+```js
 function appendInt(struct Buffer.buffer _buf, uint256 _data, uint256 _len) internal pure
 returns(_buffer struct Buffer.buffer)
 ```
@@ -494,1494 +493,1489 @@ The original buffer.
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer | The buffer to append to. |
-| \_data | uint256 | The data to append. |
-| \_len | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer | The buffer to append to. | 
+| _data | uint256 | The data to append. | 
+| _len | uint256 |  | 
 
 ### encodeType
 
-```javascript
+```js
 function encodeType(struct Buffer.buffer _buf, uint8 _major, uint256 _value) private pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
-| \_major | uint8 |  |
-| \_value | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
+| _major | uint8 |  | 
+| _value | uint256 |  | 
 
 ### encodeIndefiniteLengthType
 
-```javascript
+```js
 function encodeIndefiniteLengthType(struct Buffer.buffer _buf, uint8 _major) private pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
-| \_major | uint8 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
+| _major | uint8 |  | 
 
 ### encodeUInt
 
-```javascript
+```js
 function encodeUInt(struct Buffer.buffer _buf, uint256 _value) internal pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
-| \_value | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
+| _value | uint256 |  | 
 
 ### encodeInt
 
-```javascript
+```js
 function encodeInt(struct Buffer.buffer _buf, int256 _value) internal pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
-| \_value | int256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
+| _value | int256 |  | 
 
 ### encodeBytes
 
-```javascript
+```js
 function encodeBytes(struct Buffer.buffer _buf, bytes _value) internal pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
-| \_value | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
+| _value | bytes |  | 
 
 ### encodeString
 
-```javascript
+```js
 function encodeString(struct Buffer.buffer _buf, string _value) internal pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
-| \_value | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
+| _value | string |  | 
 
 ### startArray
 
-```javascript
+```js
 function startArray(struct Buffer.buffer _buf) internal pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
 
 ### startMap
 
-```javascript
+```js
 function startMap(struct Buffer.buffer _buf) internal pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
 
 ### endSequence
 
-```javascript
+```js
 function endSequence(struct Buffer.buffer _buf) internal pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_buf | struct Buffer.buffer |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _buf | struct Buffer.buffer |  | 
 
-### oraclize\_setNetwork
+### oraclize_setNetwork
 
-```javascript
+```js
 function oraclize_setNetwork(uint8 _networkID) internal nonpayable
 returns(_networkSet bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_networkID | uint8 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _networkID | uint8 |  | 
 
-### oraclize\_setNetworkName
+### oraclize_setNetworkName
 
-```javascript
+```js
 function oraclize_setNetworkName(string _network_name) internal nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_network\_name | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _network_name | string |  | 
 
-### oraclize\_getNetworkName
+### oraclize_getNetworkName
 
-```javascript
+```js
 function oraclize_getNetworkName() internal view
 returns(_networkName string)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
+### oraclize_setNetwork
 
-### oraclize\_setNetwork
-
-```javascript
+```js
 function oraclize_setNetwork() internal nonpayable
 returns(_networkSet bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
+### __callback
 
-### \_\_callback
-
-```javascript
+```js
 function __callback(bytes32 _myid, string _result) public nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_myid | bytes32 |  |
-| \_result | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _myid | bytes32 |  | 
+| _result | string |  | 
 
-### \_\_callback
+### __callback
 
-```javascript
+```js
 function __callback(bytes32 _myid, string _result, bytes _proof) public nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_myid | bytes32 |  |
-| \_result | string |  |
-| \_proof | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _myid | bytes32 |  | 
+| _result | string |  | 
+| _proof | bytes |  | 
 
-### oraclize\_getPrice
+### oraclize_getPrice
 
-```javascript
+```js
 function oraclize_getPrice(string _datasource) internal nonpayable oraclizeAPI 
 returns(_queryPrice uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
 
-### oraclize\_getPrice
+### oraclize_getPrice
 
-```javascript
+```js
 function oraclize_getPrice(string _datasource, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_queryPrice uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string _arg) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_arg | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _arg | string |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string _arg) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_arg | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _arg | string |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string _arg, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_arg | string |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _arg | string |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string _arg, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_arg | string |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _arg | string |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string _arg1, string _arg2) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_arg1 | string |  |
-| \_arg2 | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _arg1 | string |  | 
+| _arg2 | string |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string _arg1, string _arg2) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_arg1 | string |  |
-| \_arg2 | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _arg1 | string |  | 
+| _arg2 | string |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string _arg1, string _arg2, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_arg1 | string |  |
-| \_arg2 | string |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _arg1 | string |  | 
+| _arg2 | string |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string _arg1, string _arg2, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_arg1 | string |  |
-| \_arg2 | string |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _arg1 | string |  | 
+| _arg2 | string |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[] _argN) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_argN | string\[\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _argN | string[] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[] _argN) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_argN | string\[\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _argN | string[] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[] _argN, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_argN | string\[\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _argN | string[] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[] _argN, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_argN | string\[\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _argN | string[] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[1] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[1\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[1] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[1] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[1\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[1] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[1] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[1\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[1] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[1] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[1\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[1] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[2] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[2\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[2] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[2] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[2\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[2] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[2] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[2\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[2] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[2] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[2\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[2] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[3] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[3\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[3] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[3] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[3\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[3] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[3] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[3\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[3] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[3] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[3\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[3] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[4] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[4\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[4] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[4] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[4\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[4] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[4] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[4\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[4] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[4] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[4\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[4] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[5] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[5\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[5] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[5] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[5\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[5] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, string[5] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | string\[5\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | string[5] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, string[5] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | string\[5\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | string[5] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[] _argN) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_argN | bytes\[\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _argN | bytes[] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[] _argN) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_argN | bytes\[\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _argN | bytes[] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[] _argN, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_argN | bytes\[\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _argN | bytes[] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[] _argN, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_argN | bytes\[\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _argN | bytes[] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[1] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[1\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[1] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[1] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[1\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[1] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[1] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[1\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[1] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[1] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[1\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[1] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[2] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[2\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[2] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[2] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[2\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[2] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[2] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[2\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[2] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[2] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[2\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[2] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[3] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[3\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[3] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[3] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[3\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[3] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[3] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[3\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[3] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[3] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[3\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[3] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[4] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[4\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[4] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[4] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[4\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[4] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[4] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[4\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[4] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[4] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[4\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[4] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[5] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[5\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[5] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[5] _args) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[5\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[5] |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(uint256 _timestamp, string _datasource, bytes[5] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_timestamp | uint256 |  |
-| \_datasource | string |  |
-| \_args | bytes\[5\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _timestamp | uint256 |  | 
+| _datasource | string |  | 
+| _args | bytes[5] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_query
+### oraclize_query
 
-```javascript
+```js
 function oraclize_query(string _datasource, bytes[5] _args, uint256 _gasLimit) internal nonpayable oraclizeAPI 
 returns(_id bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_datasource | string |  |
-| \_args | bytes\[5\] |  |
-| \_gasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _datasource | string |  | 
+| _args | bytes[5] |  | 
+| _gasLimit | uint256 |  | 
 
-### oraclize\_setProof
+### oraclize_setProof
 
-```javascript
-function oraclize_setProof(bytes1 _proofP) internal nonpayable oraclizeAPI
+```js
+function oraclize_setProof(bytes1 _proofP) internal nonpayable oraclizeAPI 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_proofP | bytes1 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _proofP | bytes1 |  | 
 
-### oraclize\_cbAddress
+### oraclize_cbAddress
 
-```javascript
+```js
 function oraclize_cbAddress() internal nonpayable oraclizeAPI 
 returns(_callbackAddress address)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### getCodeSize
 
-```javascript
+```js
 function getCodeSize(address _addr) internal view
 returns(_size uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_addr | address |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _addr | address |  | 
 
-### oraclize\_setCustomGasPrice
+### oraclize_setCustomGasPrice
 
-```javascript
-function oraclize_setCustomGasPrice(uint256 _gasPrice) internal nonpayable oraclizeAPI
+```js
+function oraclize_setCustomGasPrice(uint256 _gasPrice) internal nonpayable oraclizeAPI 
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_gasPrice | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _gasPrice | uint256 |  | 
 
-### oraclize\_randomDS\_getSessionPubKeyHash
+### oraclize_randomDS_getSessionPubKeyHash
 
-```javascript
+```js
 function oraclize_randomDS_getSessionPubKeyHash() internal nonpayable oraclizeAPI 
 returns(_sessionKeyHash bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 
 ### parseAddr
 
-```javascript
+```js
 function parseAddr(string _a) internal pure
 returns(_parsedAddress address)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
 
 ### strCompare
 
-```javascript
+```js
 function strCompare(string _a, string _b) internal pure
 returns(_returnCode int256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
-| \_b | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
+| _b | string |  | 
 
 ### indexOf
 
-```javascript
+```js
 function indexOf(string _haystack, string _needle) internal pure
 returns(_returnCode int256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_haystack | string |  |
-| \_needle | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _haystack | string |  | 
+| _needle | string |  | 
 
 ### strConcat
 
-```javascript
+```js
 function strConcat(string _a, string _b) internal pure
 returns(_concatenatedString string)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
-| \_b | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
+| _b | string |  | 
 
 ### strConcat
 
-```javascript
+```js
 function strConcat(string _a, string _b, string _c) internal pure
 returns(_concatenatedString string)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
-| \_b | string |  |
-| \_c | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
+| _b | string |  | 
+| _c | string |  | 
 
 ### strConcat
 
-```javascript
+```js
 function strConcat(string _a, string _b, string _c, string _d) internal pure
 returns(_concatenatedString string)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
-| \_b | string |  |
-| \_c | string |  |
-| \_d | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
+| _b | string |  | 
+| _c | string |  | 
+| _d | string |  | 
 
 ### strConcat
 
-```javascript
+```js
 function strConcat(string _a, string _b, string _c, string _d, string _e) internal pure
 returns(_concatenatedString string)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
-| \_b | string |  |
-| \_c | string |  |
-| \_d | string |  |
-| \_e | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
+| _b | string |  | 
+| _c | string |  | 
+| _d | string |  | 
+| _e | string |  | 
 
 ### safeParseInt
 
-```javascript
+```js
 function safeParseInt(string _a) internal pure
 returns(_parsedInt uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
 
 ### safeParseInt
 
-```javascript
+```js
 function safeParseInt(string _a, uint256 _b) internal pure
 returns(_parsedInt uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
-| \_b | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
+| _b | uint256 |  | 
 
 ### parseInt
 
-```javascript
+```js
 function parseInt(string _a) internal pure
 returns(_parsedInt uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
 
 ### parseInt
 
-```javascript
+```js
 function parseInt(string _a, uint256 _b) internal pure
 returns(_parsedInt uint256)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_a | string |  |
-| \_b | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
+| _b | uint256 |  | 
 
 ### uint2str
 
-```javascript
+```js
 function uint2str(uint256 _i) internal pure
 returns(_uintAsString string)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_i | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _i | uint256 |  | 
 
 ### stra2cbor
 
-```javascript
+```js
 function stra2cbor(string[] _arr) internal pure
 returns(_cborEncoding bytes)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_arr | string\[\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _arr | string[] |  | 
 
 ### ba2cbor
 
-```javascript
+```js
 function ba2cbor(bytes[] _arr) internal pure
 returns(_cborEncoding bytes)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_arr | bytes\[\] |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _arr | bytes[] |  | 
 
-### oraclize\_newRandomDSQuery
+### oraclize_newRandomDSQuery
 
-```javascript
+```js
 function oraclize_newRandomDSQuery(uint256 _delay, uint256 _nbytes, uint256 _customGasLimit) internal nonpayable
 returns(_queryId bytes32)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_delay | uint256 |  |
-| \_nbytes | uint256 |  |
-| \_customGasLimit | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _delay | uint256 |  | 
+| _nbytes | uint256 |  | 
+| _customGasLimit | uint256 |  | 
 
-### oraclize\_randomDS\_setCommitment
+### oraclize_randomDS_setCommitment
 
-```javascript
+```js
 function oraclize_randomDS_setCommitment(bytes32 _queryId, bytes32 _commitment) internal nonpayable
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_queryId | bytes32 |  |
-| \_commitment | bytes32 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _queryId | bytes32 |  | 
+| _commitment | bytes32 |  | 
 
 ### verifySig
 
-```javascript
+```js
 function verifySig(bytes32 _tosignh, bytes _dersig, bytes _pubkey) internal nonpayable
 returns(_sigVerified bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_tosignh | bytes32 |  |
-| \_dersig | bytes |  |
-| \_pubkey | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tosignh | bytes32 |  | 
+| _dersig | bytes |  | 
+| _pubkey | bytes |  | 
 
-### oraclize\_randomDS\_proofVerify\_\_sessionKeyValidity
+### oraclize_randomDS_proofVerify__sessionKeyValidity
 
-```javascript
+```js
 function oraclize_randomDS_proofVerify__sessionKeyValidity(bytes _proof, uint256 _sig2offset) internal nonpayable
 returns(_proofVerified bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_proof | bytes |  |
-| \_sig2offset | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _proof | bytes |  | 
+| _sig2offset | uint256 |  | 
 
-### oraclize\_randomDS\_proofVerify\_\_returnCode
+### oraclize_randomDS_proofVerify__returnCode
 
-```javascript
+```js
 function oraclize_randomDS_proofVerify__returnCode(bytes32 _queryId, string _result, bytes _proof) internal nonpayable
 returns(_returnCode uint8)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_queryId | bytes32 |  |
-| \_result | string |  |
-| \_proof | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _queryId | bytes32 |  | 
+| _result | string |  | 
+| _proof | bytes |  | 
 
 ### matchBytes32Prefix
 
-```javascript
+```js
 function matchBytes32Prefix(bytes32 _content, bytes _prefix, uint256 _nRandomBytes) internal pure
 returns(_matchesPrefix bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_content | bytes32 |  |
-| \_prefix | bytes |  |
-| \_nRandomBytes | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _content | bytes32 |  | 
+| _prefix | bytes |  | 
+| _nRandomBytes | uint256 |  | 
 
-### oraclize\_randomDS\_proofVerify\_\_main
+### oraclize_randomDS_proofVerify__main
 
-```javascript
+```js
 function oraclize_randomDS_proofVerify__main(bytes _proof, bytes32 _queryId, bytes _result, string _contextName) internal nonpayable
 returns(_proofVerified bool)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_proof | bytes |  |
-| \_queryId | bytes32 |  |
-| \_result | bytes |  |
-| \_contextName | string |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _proof | bytes |  | 
+| _queryId | bytes32 |  | 
+| _result | bytes |  | 
+| _contextName | string |  | 
 
 ### copyBytes
 
-```javascript
+```js
 function copyBytes(bytes _from, uint256 _fromOffset, uint256 _length, bytes _to, uint256 _toOffset) internal pure
 returns(_copiedBytes bytes)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_from | bytes |  |
-| \_fromOffset | uint256 |  |
-| \_length | uint256 |  |
-| \_to | bytes |  |
-| \_toOffset | uint256 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _from | bytes |  | 
+| _fromOffset | uint256 |  | 
+| _length | uint256 |  | 
+| _to | bytes |  | 
+| _toOffset | uint256 |  | 
 
-### safer\_ecrecover
+### safer_ecrecover
 
-```javascript
+```js
 function safer_ecrecover(bytes32 _hash, uint8 _v, bytes32 _r, bytes32 _s) internal nonpayable
 returns(_success bool, _recoveredAddress address)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_hash | bytes32 |  |
-| \_v | uint8 |  |
-| \_r | bytes32 |  |
-| \_s | bytes32 |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _hash | bytes32 |  | 
+| _v | uint8 |  | 
+| _r | bytes32 |  | 
+| _s | bytes32 |  | 
 
 ### ecrecovery
 
-```javascript
+```js
 function ecrecovery(bytes32 _hash, bytes _sig) internal nonpayable
 returns(_success bool, _recoveredAddress address)
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| \_hash | bytes32 |  |
-| \_sig | bytes |  |
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _hash | bytes32 |  | 
+| _sig | bytes |  | 
 
 ### safeMemoryCleaner
 
-```javascript
+```js
 function safeMemoryCleaner() internal pure
 ```
 
 **Arguments**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
 

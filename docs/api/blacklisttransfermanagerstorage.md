@@ -4,19 +4,18 @@ title: BlacklistTransferManagerStorage
 original_id: BlacklistTransferManagerStorage
 ---
 
-# Contract used to store layout for the CountTransferManager storage \(BlacklistTransferManagerStorage.
+# Contract used to store layout for the CountTransferManager storage (BlacklistTransferManagerStorage.sol)
 
-View Source: [contracts/modules/TransferManager/BTM/BlacklistTransferManagerStorage.sol](https://github.com/remon-nashid/polymath-core/tree/0c5593835be9dcec69d8de5b12eb17bc7cd77adc/contracts/modules/TransferManager/BTM/BlacklistTransferManagerStorage.sol)
+View Source: [contracts/modules/TransferManager/BTM/BlacklistTransferManagerStorage.sol](../../contracts/modules/TransferManager/BTM/BlacklistTransferManagerStorage.sol)
 
-**↘ Derived Contracts:** [**BlacklistTransferManager**](blacklisttransfermanager.md)**,** [**BlacklistTransferManagerProxy**](blacklisttransfermanagerproxy.md)
+**↘ Derived Contracts: [BlacklistTransferManager](BlacklistTransferManager.md), [BlacklistTransferManagerProxy](BlacklistTransferManagerProxy.md)**
 
 **BlacklistTransferManagerStorage**
 
 ## Structs
-
 ### BlacklistsDetails
 
-```javascript
+```js
 struct BlacklistsDetails {
  uint256 startTime,
  uint256 endTime,
@@ -25,10 +24,9 @@ struct BlacklistsDetails {
 ```
 
 ## Contract Members
-
 **Constants & Variables**
 
-```javascript
+```js
 //public members
 mapping(bytes32 => struct BlacklistTransferManagerStorage.BlacklistsDetails) public blacklists;
 
@@ -38,6 +36,7 @@ mapping(bytes32 => address[]) internal blacklistToInvestor;
 mapping(address => mapping(bytes32 => uint256)) internal investorToIndex;
 mapping(bytes32 => mapping(address => uint256)) internal blacklistToIndex;
 bytes32[] internal allBlacklists;
+
 ```
 
 ## Functions
